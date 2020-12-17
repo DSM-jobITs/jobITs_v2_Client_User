@@ -32,6 +32,32 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              fallback: 'file-loader',
+              name: 'assets/images/[name].[ext]',
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              fallback: 'file-loader',
+              name: 'assets/fonts/[name].[ext]',
+            }
+          }
+        ]
       }
     ],
   },
