@@ -5,10 +5,9 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   html, body {
-    overflow: hidden;
-    margin-top: 1.875rem; /* 헤더로 겹치는 부분만큼 margin */
     margin: 0;
     padding: 0;
+    margin-top: 1.875rem; /* 헤더로 겹치는 부분만큼 margin */
     font-family: 'AppleSDGothic', 'sans-serif';
   }
 
