@@ -1,10 +1,6 @@
 import { IpcNetConnectOpts } from 'net'
 import styled from "styled-components"
 
-type icon = {
-  name: string;
-}
-
 export const Main = styled.div`
   display: flex;
   position: relative;
@@ -41,17 +37,25 @@ export const LinkWarp = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 18.75rem;
   height: 100%;
   cursor: pointer;
   transition: background 0.2s;
   :hover{
-    background: ${props => props.theme.color.sub}
+    background: ${props => props.theme.color.sub};
+    color: #ffffff;
   }
 `
 
-export const Link = styled.img<icon>`
+export const Icon = styled.img`
   position: relative;
-  width: 10px;
-  height: 8.75rem;
+  height: 5.625rem;
+`
+
+export const IconText = styled.div`
+  position: relative;
+  margin-top: 1.3125rem;
+  font-size: 1.3125rem;
+  color: #ffffff;
 `

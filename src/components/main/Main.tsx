@@ -11,19 +11,24 @@ const Main = () => {
       <S.Nav>
         <S.NavWarp>
           <S.LinkWarp>
-            <div>채용의뢰</div>
+            <S.Icon alt="Employment" src="/src/assets/images/Icon_Employment.png" />
+            <S.IconText>채용의뢰</S.IconText>
           </S.LinkWarp>
           <S.LinkWarp>
-            <div>공지사항</div>
+            <S.Icon alt="Notice" src="/src/assets/images/Icon_Notice.png" />
+            <S.IconText>공지사항</S.IconText>
           </S.LinkWarp>
           <S.LinkWarp>
-            <div>면접</div>
+            <S.Icon alt="Interview" src="/src/assets/images/Icon_Interview.png" />
+            <S.IconText>면접</S.IconText>
           </S.LinkWarp>
           <S.LinkWarp>
-            <div>취업</div>
+            <S.Icon alt="Company" src="/src/assets/images/Icon_Company.png" />
+            <S.IconText>기업</S.IconText>
           </S.LinkWarp>
           <S.LinkWarp>
-            <div>FAQ</div>
+            <S.Icon alt="FAQ" src="/src/assets/images/Icon_FAQ.png" />
+            <S.IconText>FAQ</S.IconText>
           </S.LinkWarp>
         </S.NavWarp>
       </S.Nav>
