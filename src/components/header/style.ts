@@ -8,7 +8,7 @@ export const Main = styled.div`
   top: 0;
   left: 0;
   height: 3.75rem;
-  background: #ffffff;
+  background: rgba(255,255,255,0.95);
   border-bottom: solid 1px #D4D4D4;
   z-index: 100;
 `
@@ -16,13 +16,13 @@ export const Main = styled.div`
 export const Inner = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 61.5%;
+  width: 73.75rem;
   height: 100%;
-  background: #ffffff;
 `
 
 export const Logo = styled.img`
   height: 2.625rem;
+  margin-left: -0.625rem;
   align-self: center;
 `
 
@@ -32,7 +32,6 @@ export const NavWarp = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 43.125rem;
-  background: #ffffff;
 `
 
 export const NavLink = styled.div`
@@ -43,7 +42,6 @@ export const NavLink = styled.div`
   /* width: 6.375rem; */
   padding: 0 15px;
   height: 100%;
-  background: #ffffff;
   cursor: pointer;
   &::after{
     content: "";

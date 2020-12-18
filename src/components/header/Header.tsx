@@ -12,7 +12,7 @@ const Header = () => {
             <S.NavLink>공지사항</S.NavLink>
             <S.NavLink>면접</S.NavLink>
             <S.NavLink>기업</S.NavLink>
-            <S.NavLink>취업사전</S.NavLink>
+            <S.NavLink>FAQ</S.NavLink>
             <S.Login>LOGIN</S.Login>
           </S.NavWarp>
         </S.Inner>
