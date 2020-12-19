@@ -1,10 +1,11 @@
 import React from 'react';
+import * as S from './style';
 
 const NotFound = () => {
   return (
-    <div>
-      얘! 404란다!
-    </div>
+    <S.Main>
+      <S.NotFound src="/src/assets/images/Logo.png" />
+    </S.Main>
   );
 };
 
