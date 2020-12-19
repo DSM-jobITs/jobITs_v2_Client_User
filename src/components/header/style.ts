@@ -62,9 +62,9 @@ export const NavLink = styled.div`
 `
 
 export const Login = styled.button`
-  width: 4.375rem;
+  width: 4.875rem;
   height: 2.00rem;
-  margin-left: 45px;
+  margin-left: 60px;
   border: solid 2px #3A801D;
   border-radius: 10px;
   background: #ffffff;
@@ -76,5 +76,21 @@ export const Login = styled.button`
   &:hover{
     background: #3A801D;
     color: #ffffff;
+  }
+`
+
+export const User = styled.div`
+  position: relative;
+  width: 5.375rem;
+  margin-left: 3.75rem;
+  font-size: 1.125rem;
+  ::before{
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -1.625rem;
+    border-radius: 0.625rem;
+    background: ${props => props.theme.color.main}
   }
 `
