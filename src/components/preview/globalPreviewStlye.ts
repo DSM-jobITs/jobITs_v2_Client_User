@@ -40,6 +40,9 @@ export const ItemsWarpper = styled.div`
   width: 100%;
   height: 16.5%;
   cursor: pointer;
+  :nth-child(even){
+    background: #EAFFE0;
+  }
 `
 
 export const Items = styled.div<name>`
