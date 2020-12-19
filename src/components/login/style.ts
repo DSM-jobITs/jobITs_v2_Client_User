@@ -32,11 +32,11 @@ export const LoginText = styled.p<message>`
   margin: 5px;
   font-size: 3.3125rem;
   font-size: ${props => {
-    if(props.text === "main"){
+    if(props.text === "main"){ // mainText 일 때 font-size
       return 3.3125
-    } else if(props.text === "welcome"){
+    } else if(props.text === "welcome"){ // welcomeText 일 때 font-size
       return 2.3125
-    } else if(props.text === "sub"){
+    } else if(props.text === "sub"){ // subText 일 때 font-size
       return 1.6875
     }
   }}rem;
