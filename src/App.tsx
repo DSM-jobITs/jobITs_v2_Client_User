@@ -1,14 +1,14 @@
 import React from 'react';
 import {hot} from 'react-hot-loader';
+import { BrowserRouter } from 'react-router-dom';
+import Routing from './Routing';
 import Header from './components/header/Header';
-import Main from './components/main/Main';
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Main />
-    </div>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   );
 };
 
