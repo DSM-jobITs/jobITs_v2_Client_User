@@ -19,6 +19,7 @@ export const Nav = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
+  align-self: center;
   width: 100%;
   height: 14.125rem;
   background: ${props => props.theme.color.main}

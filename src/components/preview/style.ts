@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 type active = {
-  active?: boolean;
+  active: boolean;
+  use?: boolean;
 }
 
 export const Notice = styled.div`
@@ -40,5 +41,9 @@ export const Type = styled.div<active>`
   background: ${props => {
     if(props.active) return props.theme.color.main
   }};
-  cursor: pointer;
+  color: ${props => {
+    if(props.active) return "white";
+    if(!props.use) return "#C6C6C6";
+  }};
+
 `
