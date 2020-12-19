@@ -39,15 +39,17 @@ export const ItemsWarpper = styled.div`
   grid-template-columns: 2fr 10fr 3fr;
   width: 100%;
   height: 16.5%;
-  /* background: #666; */
-  /* border: 1px solid; */
+  cursor: pointer;
 `
 
 export const Items = styled.div<name>`
   place-self: center;
   justify-self: ${props => {
     if(props.text) return "start"
-  }}
+  }};
+  color: ${props => {
+    if(!props.text) return props.theme.color.color
+  }};
 `
 
 
