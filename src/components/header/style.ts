@@ -65,7 +65,10 @@ export const NavLink = styled.div`
   }
 `
 
-export const Login = styled.button`
+export const Login = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4.875rem;
   height: 2.00rem;
   margin-left: 60px;
@@ -77,6 +80,7 @@ export const Login = styled.button`
   transition: background, color 0.2s;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
   &:hover{
     background: #3A801D;
     color: #ffffff;
