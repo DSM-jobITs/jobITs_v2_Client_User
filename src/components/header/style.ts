@@ -84,6 +84,7 @@ export const User = styled.div`
   width: 5.375rem;
   margin-left: 3.75rem;
   font-size: 1.125rem;
+  cursor: pointer;
   ::before{
     content: '';
     position: absolute;
@@ -92,5 +93,52 @@ export const User = styled.div`
     margin-left: -1.625rem;
     border-radius: 0.625rem;
     background: ${props => props.theme.color.main}
+  }
+  ::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    clip-path: polygon(100% 0, 0 0, 50% 50%);
+    background: #C4C4C4;
+  }
+`
+
+export const UserBox = styled.div`
+  /* visibility: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  width: 7.525rem;
+  height: 7.1875rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,16%);
+  margin-top: 10px;
+  margin-left: -1.5125rem;
+  background: #ffffff;
+  ::after{
+    content: '';
+    position: absolute;
+    width: 6.525rem;
+    height: 1px;
+    margin-left: 0.5rem;
+    background: #ECECEC;
+  }
+`
+
+export const UserBoxItems = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  font-size: 0.9375rem;
+  color: ${props => props.theme.color.color};
+  transition: background 0.2s;
+  :hover{
+    background:${props => props.theme.color.background};
   }
 `

@@ -14,7 +14,13 @@ const Header = () => {
             <S.NavLink>기업</S.NavLink>
             <S.NavLink>FAQ</S.NavLink>
             {/* <S.Login>LOGIN</S.Login> */}
-            <S.User>배길준 님</S.User>
+            <S.User>
+              배길준 님
+              <S.UserBox>
+                <S.UserBoxItems>비밀번호 변경</S.UserBoxItems>
+                <S.UserBoxItems>로그아웃</S.UserBoxItems>
+              </S.UserBox>
+            </S.User>
           </S.NavWarp>
         </S.Inner>
       </S.Main>
