@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type show = {
+  show: boolean;
+}
+
 export const Main = styled.div`
   display: flex;
   position: fixed;
@@ -106,8 +110,13 @@ export const User = styled.div`
   }
 `
 
-export const UserBox = styled.div`
-  /* visibility: hidden; */
+export const UserBox = styled.div<show>`
+  visibility: ${props => {
+    if(props.show){
+      return "inherit"
+    }
+    return "hidden"
+  }};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
