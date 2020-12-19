@@ -49,6 +49,8 @@ export const Type = styled.div<active>`
 
 export const PreviewTemplate = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 65.8125rem;
   height: 27.875rem;
