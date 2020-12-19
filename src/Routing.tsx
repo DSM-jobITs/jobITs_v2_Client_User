@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Main from './components/main/Main';
+import Login from './components/login/Login';
 import NotFound from './components/notFound/NotFound';
 
 const Routing = () => {
@@ -8,6 +9,7 @@ const Routing = () => {
     <div>
       <Switch>
         <Route exact path='/' component={Main} />
+        <Route path='/login' component={Login} />
         <Route component={NotFound} />
       </Switch>
     </div>
