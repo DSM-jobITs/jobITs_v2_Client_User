@@ -5,7 +5,7 @@ type active = {
   use?: boolean;
 }
 
-export const Notice = styled.div`
+export const Preview = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
@@ -21,7 +21,7 @@ export const NoticeImg = styled.img`
   margin-top: 2rem;
 `
 
-export const NoticeNav = styled.div`
+export const PreviewNav = styled.div`
   display: flex;
   position: relative;
   width: 65.8125rem;
@@ -45,5 +45,14 @@ export const Type = styled.div<active>`
     if(props.active) return "white";
     if(!props.use) return "#C6C6C6";
   }};
+`
 
+export const PreviewTemplate = styled.div`
+  display: flex;
+  position: relative;
+  width: 65.8125rem;
+  height: 27.875rem;
+  background: ${props => props.theme.color.background};
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(90, 90, 90, 0.16);
 `
