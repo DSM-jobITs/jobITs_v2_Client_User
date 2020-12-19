@@ -25,6 +25,7 @@
     "@babel/preset-react": "^7.12.10",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
     "@types/webpack": "^4.41.25",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.2.2",
