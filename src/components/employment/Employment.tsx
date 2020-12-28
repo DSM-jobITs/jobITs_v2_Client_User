@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
+import EmploymentItems from './employmentItems/EmploymentItems';
 import * as S from './style';
 
 const Employment = () => {
@@ -18,6 +19,8 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
+          <EmploymentItems />
+          <EmploymentItems />
         </S.DetailViewWarpper>
       </S.Main>
     </div>
