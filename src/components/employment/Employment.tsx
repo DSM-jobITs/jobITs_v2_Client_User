@@ -10,6 +10,11 @@ const Employment = () => {
       <S.Main>
         <S.FilterBox>
           <S.Text>기업 검색</S.Text>
+          <S.FilterBoxInner>
+            <S.FilterWarpper></S.FilterWarpper>
+            <S.Search type="text" placeholder="기업검색"></S.Search>
+            <S.FilterText>원하시는 검색 조건을 선택(입력)하신 뒤에 결과를 조회해주세요.</S.FilterText>
+          </S.FilterBoxInner>
         </S.FilterBox>
         <S.DetailViewWarpper>
           <S.Text>전체 검색 (5)</S.Text>
@@ -19,6 +24,8 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
+          <EmploymentItems />
+          <EmploymentItems />
           <EmploymentItems />
           <EmploymentItems />
         </S.DetailViewWarpper>
