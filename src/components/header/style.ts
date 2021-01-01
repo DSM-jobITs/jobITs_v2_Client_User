@@ -73,7 +73,7 @@ export const Login = styled.a`
   height: 2.00rem;
   margin-left: 60px;
   border: solid 2px #3A801D;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #ffffff;
   color: #3A801D;
   font-weight: bold;
