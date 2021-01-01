@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './style';
 
 const Header = () => {
@@ -7,10 +8,6 @@ const Header = () => {
 
   const showUserBox = () => {
     setIsShow(!(isShow))
-  }
-
-  const login = () => {
-    setIsLogin(true);
   }
 
   const logout = () => {
@@ -36,7 +33,7 @@ const Header = () => {
                   <S.UserBoxItems onClick={logout}>로그아웃</S.UserBoxItems>
                 </S.UserBox>
               </S.User> :
-              <S.Login onClick={login}>LOGIN</S.Login>
+              <S.Login to="/login" as={Link}>LOGIN</S.Login>
             }
           </S.NavWarp>
         </S.Inner>
