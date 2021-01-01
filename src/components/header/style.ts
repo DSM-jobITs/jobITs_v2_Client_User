@@ -65,18 +65,22 @@ export const NavLink = styled.div`
   }
 `
 
-export const Login = styled.button`
+export const Login = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4.875rem;
   height: 2.00rem;
   margin-left: 60px;
   border: solid 2px #3A801D;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #ffffff;
   color: #3A801D;
   font-weight: bold;
   transition: background, color 0.2s;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
   &:hover{
     background: #3A801D;
     color: #ffffff;
