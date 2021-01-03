@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 type show = {
   show: boolean;
@@ -26,6 +27,7 @@ export const Inner = styled.div`
 
 export const Logo = styled.img`
   height: 2.625rem;
+  margin-top: 0.4rem;
   margin-left: -0.625rem;
   align-self: center;
 `
@@ -38,7 +40,7 @@ export const NavWarp = styled.div`
   width: 43.125rem;
 `
 
-export const NavLink = styled.div`
+export const NavItem = styled(NavLink)`
   display: flex;
   position:relative;
   justify-content: center;
@@ -47,6 +49,7 @@ export const NavLink = styled.div`
   padding: 0 15px;
   height: 100%;
   cursor: pointer;
+  text-decoration: none;
   &::after{
     content: "";
     position: absolute;
@@ -62,6 +65,9 @@ export const NavLink = styled.div`
   &:hover::after{
     width: 100%;
     opacity: 1;
+  }
+  &:visited{
+    color: #000000;
   }
 `
 

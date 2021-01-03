@@ -18,13 +18,15 @@ const Header = () => {
     <div>
       <S.Main>
         <S.Inner>
-          <S.Logo src="/src/assets/images/Logo.png" alt="로고"/>
+          <Link to="/">
+            <S.Logo src="/src/assets/images/Logo.png" alt="로고"/>
+          </Link>
           <S.NavWarp>
-            <S.NavLink>채용의뢰</S.NavLink>
-            <S.NavLink>공지사항</S.NavLink>
-            <S.NavLink>면접</S.NavLink>
-            <S.NavLink>기업</S.NavLink>
-            <S.NavLink>FAQ</S.NavLink>
+            <S.NavItem to='/employment'>채용의뢰</S.NavItem>
+            <S.NavItem to='/employment'>공지사항</S.NavItem>
+            <S.NavItem to='/employment'>면접</S.NavItem>
+            <S.NavItem to='/employment'>기업</S.NavItem>
+            <S.NavItem to='/employment'>FAQ</S.NavItem>
             {isLogin ? 
               <S.User onClick={showUserBox}>
                 배길준 님
