@@ -69,6 +69,12 @@ export const NavItem = styled(NavLink)`
   &:visited{
     color: #000000;
   }
+  &:active{
+    color: #000000;
+  }
+  &:link{
+    color: #000000;
+  }
 `
 
 export const Login = styled.a`
