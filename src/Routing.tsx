@@ -4,8 +4,8 @@ import Main from './components/main/Main';
 import Login from './components/login/Login';
 import Employment from './components/employment/Employment';
 import EmploymentDetailView from './components/employment/employmentDetailView/EmploymentDetailView';
-
 import NotFound from './components/notFound/NotFound';
+import Warning from './components/warning/Warning';
 
 const Routing = () => {
   return (
@@ -17,7 +17,7 @@ const Routing = () => {
 
         <Route path='/employment' component={Employment} />
         <Route path='/hello' component={EmploymentDetailView} />
-
+        <Route path='/warning' component={Warning} />
         <Route component={NotFound} />
       </Switch>
     </div>
