@@ -11,7 +11,9 @@ const Employment = () => {
         <S.FilterBox>
           <S.Text>기업 검색</S.Text>
           <S.FilterBoxInner>
-            <S.FilterWarpper></S.FilterWarpper>
+            <S.FilterWarpper>
+              <div>이 부분은 필터링을 위한 컴포넌트가 들어갑니다.</div>
+            </S.FilterWarpper>
             <S.Search type="text" placeholder="기업검색"></S.Search>
             <S.FilterText>원하시는 검색 조건을 선택(입력)하신 뒤에 결과를 조회해주세요.</S.FilterText>
           </S.FilterBoxInner>
