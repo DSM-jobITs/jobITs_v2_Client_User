@@ -1,4 +1,3 @@
-import { IpcNetConnectOpts } from 'net'
 import styled from "styled-components"
 
 export const Main = styled.div`
@@ -52,6 +51,7 @@ export const LinkWarp = styled.div`
 export const Icon = styled.img`
   position: relative;
   height: 5.625rem;
+  text-decoration: none;
 `
 
 export const IconText = styled.div`
@@ -59,4 +59,5 @@ export const IconText = styled.div`
   margin-top: 1.3125rem;
   font-size: 1.3125rem;
   color: #ffffff;
+  text-decoration: none;
 `
