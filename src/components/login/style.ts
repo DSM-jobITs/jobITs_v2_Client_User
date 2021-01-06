@@ -1,8 +1,8 @@
-import { type } from 'os';
 import styled from 'styled-components';
 
 type message = {
-  text: string;
+  text?: string;
+  error?: boolean;
 }
 
 export const Main = styled.div`
@@ -50,6 +50,7 @@ export const LoginText = styled.p<message>`
 `
 
 export const Input = styled.input`
+  position: relative;
   width: 36.3125rem;
   height: 4.875rem;
   margin-top: 20px;
@@ -60,6 +61,18 @@ export const Input = styled.input`
     outline: none;
     border: 3px solid ${props => props.theme.color.main};
   }
+`
+
+export const ErrorText = styled.div<message>`
+  position: absolute;
+  visibility: ${props => {
+    if(props.error){
+      return "visible"
+    }else{
+      return "hidden"
+    }
+  }};
+  color: #ff1f1f;
 `
 
 export const Submit = styled.button`
