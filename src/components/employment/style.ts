@@ -60,7 +60,7 @@ export const FilterWarpper = styled.div`
   width: 21.875rem;
   height: 50px;
   justify-content:center;
-  background: #888;
+  background: #ccc;
 `
 
 export const Search = styled.input`

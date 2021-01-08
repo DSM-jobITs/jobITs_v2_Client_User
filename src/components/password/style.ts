@@ -51,8 +51,8 @@ export const LoginText = styled.p<message>`
 
 export const Input = styled.input`
   position: relative;
-  width: 36.3125rem;
-  height: 4.875rem;
+  width: 30.3125rem;
+  height: 3.875rem;
   margin-top: 20px;
   padding: 0 20px;
   border: 3px solid ${props => props.theme.color.color};
@@ -76,8 +76,8 @@ export const ErrorText = styled.div<message>`
 `
 
 export const Submit = styled.button`
-  width: 39.1875rem;
-  height: 5.25rem;
+  width: 33.3125rem;
+  height: 4.275rem;
   margin: 1.875rem;
   border: none;
   font-size: 1.375rem;

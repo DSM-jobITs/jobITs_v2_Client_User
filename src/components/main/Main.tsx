@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Preview from '../preview/Preview';
 import Header from '../header/Header';
 import {hello} from "../../scripts/alert";
@@ -14,8 +15,10 @@ const Main = () => {
       <S.Nav>
         <S.NavWarp>
           <S.LinkWarp>
-            <S.Icon alt="Employment" src="/src/assets/images/Icon_Employment.png" />
-            <S.IconText>채용의뢰</S.IconText>
+            <Link to='/employment' style={{textDecoration:'solid', textAlign: 'center'}}>
+              <S.Icon alt="Employment" src="/src/assets/images/Icon_Employment.png" />
+              <S.IconText>채용의뢰</S.IconText>
+            </Link>
           </S.LinkWarp>
           <S.LinkWarp onClick={hello}>
             <S.Icon alt="Notice" src="/src/assets/images/Icon_Notice.png" />
