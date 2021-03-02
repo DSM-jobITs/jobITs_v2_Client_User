@@ -83,5 +83,4 @@ export const DetailViewWarpper = styled.div`
   width: 62.25rem;
   height: 80.0625rem;
   margin-top: 130px;
-  /* background: #ccc; */
 `
