@@ -15,10 +15,10 @@ const Employment = () => {
             <form>
               <C.Select id="member" name="member">
                 <option value="">인원</option>
-                <option value="">5명 이상</option>
-                <option value="">20명 이상</option>
-                <option value="">50명 이상</option>
-                <option value="">100명 이상</option>
+                <option value="5">5명 이상</option>
+                <option value="20">20명 이상</option>
+                <option value="50">50명 이상</option>
+                <option value="100">100명 이상</option>
               </C.Select>
             </form>
             <div>
@@ -35,7 +35,7 @@ const Employment = () => {
         <S.DetailViewWarpper>
           <S.Text>전체 검색 (5)</S.Text>
           <S.InputBox>
-            <S.CheckBox type='radio' name="orderBy" value="resently" checked></S.CheckBox>
+            <S.CheckBox type='radio' name="orderBy" value="resently" defaultChecked></S.CheckBox>
             <span>최신 순</span>
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
