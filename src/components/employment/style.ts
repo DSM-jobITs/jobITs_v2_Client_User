@@ -56,6 +56,7 @@ export const FilterBoxInner = styled.div`
 
 export const FilterWarpper = styled.div`
   display: flex;
+  flex-direction: row;
   position: relative;
   width: 21.875rem;
   height: 50px;
@@ -64,7 +65,8 @@ export const FilterWarpper = styled.div`
 `
 
 export const Search = styled.input`
-  width: 56.75rem;
+  display: inline;
+  width: 17rem;
   height: 2.4375rem;
   padding: 0 10px;
   border: 2px solid #CFCFCF;
@@ -74,8 +76,25 @@ export const Search = styled.input`
   }
 `
 
+export const BottomWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
 export const FilterText = styled.div`
   font-size: 0.9375rem;
+  color: #B4B4B4;
+`
+
+export const SearchButton = styled.button`
+  width: 6.25rem;
+  height: 2.0625rem;
+  border: none;
+  border-radius: 8px;
+  background: #818181;
+  color: #fff;
+  font-size: 13px;
 `
 
 export const DetailViewWarpper = styled.div`
