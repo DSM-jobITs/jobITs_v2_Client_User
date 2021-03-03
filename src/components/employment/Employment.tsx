@@ -61,10 +61,20 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
-          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
-          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
-          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
-          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
+          {
+            loading &&
+            <div> loading... </div>
+          }
+          {
+            posts.map(post => (
+              <EmploymentItems 
+                key={1}
+                name={}
+                introduce={}
+                deadline={}
+              />
+            ))
+          }
         </S.DetailViewWarpper>
       </S.Main>
     </div>
