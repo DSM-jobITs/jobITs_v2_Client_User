@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 import Header from '../header/Header';
 import EmploymentItems from './employmentItems/EmploymentItems';
 import * as S from './style';
 import * as C from './comboBoxStyle';
 
 const Employment = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(6);
+
+  useEffect( () => {
+    setLoading(true);
+    const response: any = axios.get('https://jsonplaceholder.typicode.com/posts');
+    setPosts(response.data);
+    setLoading(false);
+  },[]);
+
+  const indexOfLast = currentPage * postsPerPage;
+  const indexOfFirst = indexOfLast - postsPerPage;
+  function currentPosts(tmp: any) {
+    let currentPosts = 0;
+    currentPosts = tmp.slice(indexOfFirst, indexOfLast);
+    return currentPosts;
+  }
+
   return (
     <div>
       <Header />
@@ -40,10 +61,10 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
-          <EmploymentItems />
-          <EmploymentItems />
-          <EmploymentItems />
-          <EmploymentItems />
+          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
+          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
+          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
+          <EmploymentItems posts={currentPosts(posts)} loading={loading}/>
         </S.DetailViewWarpper>
       </S.Main>
     </div>
