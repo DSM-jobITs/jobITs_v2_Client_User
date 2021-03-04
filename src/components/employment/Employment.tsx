@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import Header from '../header/Header';
 import FilterBox from './FliterBox';
-import EmploymentItems from './employmentItems/EmploymentItems';
+import Pagination from './pagination/Pagination';
+import Posts from './pagination/Posts';
 import * as S from './style';
 
 const Employment = () => {
@@ -46,22 +47,8 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
-          {
-            loading &&
-            <div> loading... </div>
-          }
-          {
-            posts.map(post => (
-              <EmploymentItems
-                name={'hello'}
-                introduce={'소개'}
-                skills={'기술 스택'}
-                deadline={'마감 일자'}
-              />
-            ))
-          }
-      {/* {console.log(posts)}
-          <EmploymentItems /> */}
+          <Posts posts={currentPosts(posts)} loading={loading}></Posts>
+          <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
       </S.Main>
     </div>

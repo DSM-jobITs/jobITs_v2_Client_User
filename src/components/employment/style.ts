@@ -7,7 +7,7 @@ export const Main = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 120rem;
+  height: 150rem;
   margin-top: 7.5rem;
 `
 
@@ -136,6 +136,6 @@ export const SearchButton = styled.button`
 export const DetailViewWarpper = styled.div`
   position: relative;
   width: 62.25rem;
-  height: 80.0625rem;
+  height: 92.0625rem;
   margin-top: 130px;
 `
