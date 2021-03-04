@@ -11,11 +11,14 @@ const Employment = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(6);
 
-  useEffect( () => {
-    setLoading(true);
-    const response: any = axios.get('https://jsonplaceholder.typicode.com/posts');
-    setPosts(response.data);
-    setLoading(false);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(response.data);
+      setLoading(false);
+    }
+    fetchData();
   },[]);
 
   const indexOfLast = currentPage * postsPerPage;
@@ -39,21 +42,22 @@ const Employment = () => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox>
-          {/* {
+          {
             loading &&
             <div> loading... </div>
           }
           {
             posts.map(post => (
-              <EmploymentItems 
-                key={1}
-                name={}
-                introduce={}
-                deadline={}
+              <EmploymentItems
+                name={'hello'}
+                introduce={'소개'}
+                skills={'기술 스택'}
+                deadline={'마감 일자'}
               />
             ))
-          } */}
-          <EmploymentItems />
+          }
+      {/* {console.log(posts)}
+          <EmploymentItems /> */}
         </S.DetailViewWarpper>
       </S.Main>
     </div>
