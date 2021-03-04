@@ -16,7 +16,8 @@ export const Main = styled.div`
   transition: all ease-in-out 0.2s;
   overflow: hidden;
 
-  ::before{
+  /*before style 1*/
+  /* ::before{
     content:"";
     position: absolute;
     bottom: -1200px;
@@ -28,10 +29,31 @@ export const Main = styled.div`
     border-radius: 1000px;
     opacity: 0.1;
     transition: bottom ease-out 0.2s;
-  }
+  } 
 
   :hover::before{
     bottom: -400px;
+  }
+  */
+
+  /*before style 2*/
+  ::before{
+    content:"";
+    position:absolute;
+    width: 2px;
+    height: 2px;
+    left: 50%;
+    background: #fff;
+    opacity: 0.1;
+    transition: all ease-in-out 0.3s;
+  }
+
+  :hover::before{
+    left: -20px;
+    width: 1200px;
+    height: 1200px;
+    background: #44E14A;
+    border-radius: 600px;
   }
 `
 
