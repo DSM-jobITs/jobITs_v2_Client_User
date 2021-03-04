@@ -45,7 +45,8 @@ export const Main = styled.div`
     left: 50%;
     background: #fff;
     opacity: 0.1;
-    transition: all ease-in-out 0.3s;
+    border-radius: 600px;
+    transition: all ease-out 0.3s;
   }
 
   :hover::before{
@@ -53,7 +54,6 @@ export const Main = styled.div`
     width: 1200px;
     height: 1200px;
     background: #44E14A;
-    border-radius: 600px;
   }
 `
 
