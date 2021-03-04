@@ -28,8 +28,8 @@ const Footer = () => {
         </S.DevelopWrap>
         <hr style={{width:"100%",border:"solid 1px #707070"}}/>
         <S.Information>
-          <S.Img src="/src/assets/images/Logo_Footer.png" />
-          <div>Github</div>
+          <S.Logo src="/src/assets/images/Logo_Footer.png" />
+          <a href="https://github.com/DSM-jobITs" target="_blank"><S.Icon src='src/assets/images/iconGithub.png'/></a>
         </S.Information>
       </S.Inner>
     </S.Main>

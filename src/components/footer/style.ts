@@ -66,7 +66,11 @@ export const Information = styled.div`
   height: 19%;
 `
 
-export const Img = styled.img`
+export const Logo = styled.img`
   width: 6.875rem;
   height: 2.6875rem;
+`
+
+export const Icon = styled.img`
+  
 `
