@@ -10,7 +10,7 @@ const Employment = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(6);
+  const [postsPerPage, setPostPerPage] = useState(9);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +40,7 @@ const Employment = () => {
         </S.AdminBox>
         <FilterBox />
         <S.DetailViewWarpper>
-          <S.Text>전체 검색 (5)</S.Text>
+          <S.Text>전체 검색 {posts.length}</S.Text>
           <S.InputBox>
             <S.CheckBox type='radio' name="orderBy" value="resently" defaultChecked></S.CheckBox>
             <span>최신 순</span>
@@ -48,7 +48,7 @@ const Employment = () => {
             <span>마감 순</span>
           </S.InputBox>
           <Posts posts={currentPosts(posts)} loading={loading}></Posts>
-          <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
+        <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
       </S.Main>
     </div>

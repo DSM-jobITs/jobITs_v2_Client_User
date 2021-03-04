@@ -6,18 +6,17 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }: any) => {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
+
   return (
-    <div>
-      <nav>
-        <S.PageUl className="pagination">
-          {pageNumbers.map(number => (
-            <S.PageLi key={number} className="page-item" onClick={() => paginate(number)}>
-                {number}
-            </S.PageLi>
-          ))}
-        </S.PageUl>
-      </nav>
-    </div>
+    <S.Div>
+      <S.PageUl className="pagination">
+        {pageNumbers.map(number => (
+          <S.PageLi key={number} className="hello" onClick={() => {paginate(number); window.scrollTo(0,0)}}>
+            {number}
+          </S.PageLi>
+        ))}
+      </S.PageUl>
+    </S.Div>
   );
 };
 

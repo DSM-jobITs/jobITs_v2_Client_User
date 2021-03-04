@@ -7,8 +7,8 @@ export const Main = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 150rem;
-  margin-top: 7.5rem;
+  min-height: 400px;
+  margin-top: 5.5rem;
 `
 
 export const Text = styled.div`
@@ -131,11 +131,16 @@ export const SearchButton = styled.button`
   background: #818181;
   color: #fff;
   font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out; 
+  :hover{
+    background: #616161;
+  }
 `
 
 export const DetailViewWarpper = styled.div`
   position: relative;
   width: 62.25rem;
-  height: 92.0625rem;
+  min-height: 400px;
   margin-top: 130px;
 `
