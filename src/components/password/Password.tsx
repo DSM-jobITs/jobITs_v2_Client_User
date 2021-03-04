@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import * as S from './style';
 
 const Password = () => {
-  const [isFine,setIsFine] = useState(true);
+  const [isError,setIsError] = useState(false);
   const [inputs, setInputs] = useState({
     password: '',
     currentPassword: '',
@@ -21,7 +21,7 @@ const Password = () => {
 
   const checkPassword = () => {
     if(password !== newPassword){
-      setIsFine(false);
+      setIsError(false);
     }
   }
 
@@ -59,7 +59,7 @@ const Password = () => {
         </div>
         <S.Submit onClick={checkPassword}>비밀번호 변경</S.Submit>
         <div>{currentPassword}-{password}-{newPassword}</div>
-        <S.ErrorText>tlqkf</S.ErrorText>
+        <S.ErrorText error={isError}>비밀번호가 </S.ErrorText>
       </S.LoginForm>
     </S.Main>
   );

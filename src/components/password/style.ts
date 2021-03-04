@@ -64,14 +64,13 @@ export const Input = styled.input`
 `
 
 export const ErrorText = styled.div<message>`
-  /* position: absolute; */
-  /* visibility: ${props => {
+  visibility: ${props => {
     if(props.error){
       return "visible"
     }else{
       return "hidden"
     }
-  }}; */
+  }};
   color: #ff1f1f;
 `
 
