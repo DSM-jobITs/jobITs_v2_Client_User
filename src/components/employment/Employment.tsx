@@ -33,6 +33,10 @@ const Employment = () => {
     <div>
       <Header />
       <S.Main>
+        <S.AdminBox>
+          <S.Management>기업 관리</S.Management>
+          <S.Add>기업 추가</S.Add>
+        </S.AdminBox>
         <FilterBox />
         <S.DetailViewWarpper>
           <S.Text>전체 검색 (5)</S.Text>

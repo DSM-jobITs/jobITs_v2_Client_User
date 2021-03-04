@@ -13,5 +13,4 @@ export const Select = styled.select`
   :focus{
     outline: none;
   }
-
 `

@@ -34,6 +34,41 @@ export const CheckBox = styled.input`
   margin-right: 0.3125rem;
 `
 
+export const AdminBox = styled.div`
+  display: flex;
+  flex-direction: row-reverse;  
+  align-items: center;
+  width: 62.25rem;
+  height: 50px;
+  margin-top: -30px;
+  margin-bottom: 50px;
+  /* background: #ccc; */
+  border-bottom: 2px solid rgba(0,0,0,0.16);
+`
+
+export const Management = styled.button`
+  width: 95px;
+  height: 33px;
+  margin-left: 10px;
+  background: #FFFFFF;
+  color: #6A5657;
+  border: 1px solid #D7D7D7;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+`
+
+export const Add = styled.button`
+  width: 95px;
+  height: 33px;
+  background: #FFFFFF;
+  color: #6A5657;
+  border: 1px solid #D7D7D7;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+`
+
 export const FilterBox = styled.div`
   position: relative;
   justify-content: center;
@@ -80,6 +115,7 @@ export const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  /* margin-top: 30px; */
 `
 
 export const FilterText = styled.div`
