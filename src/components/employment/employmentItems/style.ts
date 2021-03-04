@@ -25,7 +25,7 @@ export const Main = styled.div`
     height: 1200px;
     margin-left: -40px;
     background: #AEF98E;
-    border-radius: 600px;
+    border-radius: 1000px;
     opacity: 0.1;
     transition: bottom ease-out 0.2s;
   }
