@@ -89,6 +89,13 @@ export const InnerText = styled.div<active>`
   }};
 `
 
+export const File = styled.a`
+  place-self: center;
+  justify-self: start;
+  font-size: 0.875rem;
+  color: #9B9B9B;
+`
+
 export const MarginDiv = styled.div`
   width: 100%;
   height: 10rem;

@@ -10,7 +10,7 @@ const Employment = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(9);
+  const [postsPerPage, setPostPerPage] = useState(6);
 
   useEffect(() => {
     const fetchData = async () => {
