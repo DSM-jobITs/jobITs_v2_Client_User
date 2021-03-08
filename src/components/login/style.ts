@@ -14,6 +14,12 @@ export const Main = styled.div`
   height: 87.5vh;
 `
 
+export const Rabbit = styled.img`
+  position: absolute;
+  top: -24%;
+  left: 20px;
+`
+
 export const LoginForm = styled.div`
   display: flex;
   position: relative;
