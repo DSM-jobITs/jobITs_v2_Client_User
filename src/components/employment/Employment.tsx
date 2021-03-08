@@ -7,20 +7,43 @@ import Posts from './pagination/Posts';
 import * as S from './style';
 
 const Employment = () => {
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(6);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      setPosts(response.data);
-      setLoading(false);
-    }
-    fetchData();
-  },[]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  //     setPosts(response.data);
+  //     setLoading(false);
+  //   }
+  //   fetchData();
+  // },[]);
+
+  const posts = [
+    {
+      entNo: 138290,
+		  entName: "노티플러스",
+		  introduction: "주식회사 노티플러스는 ......",
+		  workContent: "파이썬을 이용한 AI",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 357120,
+		  entName: "데브시스터즈",
+		  introduction: "주식회사 데브시스터즈는 ......",
+		  workContent: "게임 개발",
+		  deadline: "2021-04-12"
+    },{
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+  ]
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;

@@ -10,8 +10,8 @@ const Routing = () => {
     <div>
       <Switch>
         <Route exact path='/' component={Main} />
+        <Route path='/employment/:id' component={EmploymentDetailView}/>
         <Route path='/employment' component={Employment} />
-        <Route path='/employment/:id?' component={EmploymentDetailView} />
         <Route component={NotFound} />
       </Switch>
     </div>
