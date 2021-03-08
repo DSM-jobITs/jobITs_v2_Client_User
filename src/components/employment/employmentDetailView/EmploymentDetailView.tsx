@@ -7,11 +7,10 @@ const EmploymentDetailView = ({ history }: any) => {
   // const [datas,setDatas] = useState([]);
 
   // 주소에서 id를 가져온다.
-  let id = history.location.pathname;
-  id = id.replace(/[^0-9]/g,'');
-
   // useEffect(() => {
   //   const fetchData = async () => {
+  //     let id = history.location.pathname;
+  //     id = id.replace(/[^0-9]/g,'');
   //     const response = await axios.get('주소/'+id);
   //     setDatas(response.data)
   //   }
@@ -67,6 +66,7 @@ const EmploymentDetailView = ({ history }: any) => {
     }
   }
 
+
   return (
     <div>
       <Header />
@@ -110,9 +110,9 @@ const EmploymentDetailView = ({ history }: any) => {
           <S.BoxInner>
             <S.InnerText fixed>식비지원</S.InnerText>
             <S.InnerText>
-              { datas.workingConditions.meal.breakfast ? "조식제공" : "" }
-              { datas.workingConditions.meal.lunch ? "중식제공" : "" }
-              { datas.workingConditions.meal.dinner ? "석식제공" : "" }
+              { datas.workingConditions.meal.breakfast ? "조식제공 " : "" }
+              { datas.workingConditions.meal.lunch ? "중식제공 " : "" }
+              { datas.workingConditions.meal.dinner ? "석식제공 " : "" }
               { datas.workingConditions.meal.includeSalary ? "급여 포함" : "" }
             </S.InnerText>
           </S.BoxInner>

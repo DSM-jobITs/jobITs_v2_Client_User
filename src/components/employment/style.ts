@@ -9,6 +9,7 @@ export const Main = styled.div`
   width: 100%;
   min-height: 400px;
   margin-top: 5.5rem;
+  overflow: hidden;
 `
 
 export const Text = styled.div`
@@ -40,7 +41,7 @@ export const AdminBox = styled.div`
   align-items: center;
   width: 62.25rem;
   height: 50px;
-  margin-top: -30px;
+  margin-top: -5px;
   margin-bottom: 50px;
   /* background: #ccc; */
   border-bottom: 2px solid rgba(0,0,0,0.16);
@@ -143,4 +144,34 @@ export const DetailViewWarpper = styled.div`
   width: 62.25rem;
   min-height: 400px;
   margin-top: 130px;
+`
+
+export const Design = styled.div`
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  bottom: 50%;
+  left: 92%;
+  background: ${props => props.theme.color.main};
+  ::after{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    bottom: 80%;
+    left: 20%;
+    background: ${props => props.theme.color.sub};
+  }
+  ::before{
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 300px;
+    bottom: -320%;
+    left: -700%;
+    background: #87ff52;
+  }
 `

@@ -73,6 +73,7 @@ const Employment = () => {
           <Posts posts={currentPosts(posts)} loading={loading}></Posts>
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
+        <S.Design></S.Design>
       </S.Main>
     </div>
   );
