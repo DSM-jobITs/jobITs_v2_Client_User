@@ -96,6 +96,17 @@ export const File = styled.a`
   color: #9B9B9B;
 `
 
+export const Back = styled.button`
+  width: 100px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  background: ${props => props.theme.color.sub};
+`
+
 export const MarginDiv = styled.div`
   width: 100%;
   height: 10rem;
