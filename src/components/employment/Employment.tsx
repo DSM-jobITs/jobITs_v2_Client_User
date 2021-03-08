@@ -36,7 +36,50 @@ const Employment = () => {
 		  introduction: "주식회사 데브시스터즈는 ......",
 		  workContent: "게임 개발",
 		  deadline: "2021-04-12"
-    },{
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
+      entNo: 917281,
+		  entName: "EJN",
+		  introduction: "주식회사 EJN은 ......",
+		  workContent: "HTML,CSS,JS",
+		  deadline: "2020-12-10"
+    },
+    {
       entNo: 917281,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
@@ -63,7 +106,7 @@ const Employment = () => {
         </S.AdminBox>
         <FilterBox />
         <S.DetailViewWarpper>
-          <S.Text>전체 검색 {posts.length}</S.Text>
+          <S.Text>검색 결과 {posts.length}</S.Text>
           <S.InputBox>
             <S.CheckBox type='radio' name="orderBy" value="resently" defaultChecked></S.CheckBox>
             <span>최신 순</span>
