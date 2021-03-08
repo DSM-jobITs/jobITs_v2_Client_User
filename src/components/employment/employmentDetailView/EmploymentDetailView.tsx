@@ -165,6 +165,7 @@ const EmploymentDetailView = ({ history }: any) => {
             <S.InnerText fixed>첨부 파일</S.InnerText><S.File href={"https://google.com"+datas.workingConditions.other.file.url}>{ datas.workingConditions.other.file.name }</S.File>
           </S.BoxInner>
         </S.ComplexBox>
+        <S.Back onClick={()=>history.push('/employment')}>뒤로가기</S.Back>
         <S.MarginDiv />
       </S.Main>
     </div>
