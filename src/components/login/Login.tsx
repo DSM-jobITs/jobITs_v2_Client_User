@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import * as S from './style'; 
-// import Rabbit from '../../assets/images/Rabbit.png';
 
 const Login = () => {
   const [isError,setIsError] = useState(false);
@@ -22,7 +21,7 @@ const Login = () => {
   return (
     <S.Main>
       <S.LoginForm>
-        <S.Rabbit src="" alt="토끼" />
+        <S.Rabbit src='/src/assets/images/Rabbit.png' alt="토끼" />
         <S.LoginText text="main">LOGIN</S.LoginText>
         <S.LoginText text="welcome">Welcome to jobITs</S.LoginText>
         <S.LoginText text="sub">Login to jobITs and use various features.</S.LoginText>
@@ -30,7 +29,7 @@ const Login = () => {
           <S.Input
             name="id"
             type="id" 
-            placeholder="id" 
+            placeholder="id"
             onChange={onChange}
             value={id}
           />
