@@ -76,10 +76,17 @@ export const BoxInner = styled.div`
   margin: 10px 0;
 `
 
+export const FileInner = styled.div`
+  display: flex;
+  width: 100%;
+  height: 23px;
+  margin: 10px 0;
+`
+
 export const InnerText = styled.div<active>`
   place-self: center;
   justify-self: start;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   color: ${props => {
     if(props.fixed){
       return "#9B9B9B"
@@ -94,6 +101,10 @@ export const File = styled.a`
   justify-self: start;
   font-size: 0.875rem;
   color: #9B9B9B;
+  margin-left: 95px;
+  :hover{
+    color: #1234a2;
+  }
 `
 
 export const Back = styled.button`
