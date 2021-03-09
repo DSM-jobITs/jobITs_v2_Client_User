@@ -7,12 +7,12 @@ const Footer = () => {
       <S.Inner>
         <S.DevelopWrap>
           <S.PartInner>
-            <S.Text part>FrontEnd</S.Text>
+            <S.Text part>Frontend</S.Text>
             <S.Text>배길준</S.Text>
             <S.Text>신서림</S.Text>
           </S.PartInner>
           <S.PartInner>
-            <S.Text part>BackEnd</S.Text>
+            <S.Text part>Server</S.Text>
             <S.Text>서민준</S.Text>
             <S.Text>신두평</S.Text>
             <S.Text>양승빈</S.Text>

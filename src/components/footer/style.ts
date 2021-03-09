@@ -54,7 +54,7 @@ export const Text = styled.div<fixed>`
     }
   }};
   font-size: 1.125rem;
-  color: #ffffff;
+  color: #a6a6a6;
 `
 
 export const Information = styled.div`
