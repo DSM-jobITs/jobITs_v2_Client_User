@@ -70,7 +70,6 @@ export const Input = styled.input`
 `
 
 export const ErrorText = styled.div<message>`
-  position: absolute;
   visibility: ${props => {
     if(props.error){
       return "visible"
@@ -78,6 +77,7 @@ export const ErrorText = styled.div<message>`
       return "hidden"
     }
   }};
+  margin-top: 5px;
   color: #ff1f1f;
 `
 
