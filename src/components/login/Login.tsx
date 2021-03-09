@@ -24,7 +24,7 @@ const Login = () => {
         <S.Rabbit src='/src/assets/images/Rabbit.png' alt="토끼" />
         <S.LoginText text="main">LOGIN</S.LoginText>
         <S.LoginText text="welcome">Welcome to jobITs</S.LoginText>
-        <S.LoginText text="sub">Login to jobITs and use various features.</S.LoginText>
+        <S.LoginText text="sub">로그인하여 다양한 기업정보를 확인해보세요.</S.LoginText>
         <div>
           <S.Input
             name="id"
