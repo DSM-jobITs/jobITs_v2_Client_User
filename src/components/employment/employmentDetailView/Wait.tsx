@@ -6,14 +6,14 @@ const Wait = () => {
   setTimeout(() => {  
   const element = document.querySelectorAll('span');
   for(let i = 0; i<element.length;i++){
-    element[i].style.animationDelay = i*0.07 + 's';
+    element[i].style.animationDelay = i*0.15 + 's';
   }
   console.log(element.length)
   },100)
 
   return (
     <S.Container>
-      <S.Span className="text">l</S.Span>
+      <S.Span className="text">L</S.Span>
       <S.Span className="text">o</S.Span>
       <S.Span className="text">a</S.Span>
       <S.Span className="text">d</S.Span>
@@ -23,7 +23,6 @@ const Wait = () => {
       <S.Span className="text">.</S.Span>
       <S.Span className="text">.</S.Span>
       <S.Span className="text">.</S.Span>
-
     </S.Container>
   );
 };

@@ -18,9 +18,7 @@ const EmploymentDetailView = ({ history }: any) => {
       let id = history.location.pathname;
       id = id.replace(/[^0-9]/g,'');
       const response = await axios.get('http://54.180.2.226/recruit/detail/462889c9252890cd883c18c1fb6abb',config);
-      setTimeout(() => {
-        setDatas(response.data);
-      },150)
+      setDatas(response.data);
     }
     fetchData();
   },[]);
@@ -31,8 +29,8 @@ const EmploymentDetailView = ({ history }: any) => {
       {datas.qualification===undefined?
           <Wait />:
       <S.Main>
-          <S.Name>{datas.entName}</S.Name>
-        <S.CompanyNumber>({datas.entNo})</S.CompanyNumber> {/* 회사 일련번호 */}
+        <S.Name>{datas.entName}</S.Name>
+        <S.CompanyNumber>({datas.entNo})</S.CompanyNumber>
         <hr style={{width:"100%",height:"0.2rem",border:"2px double #D5D5D5",margin:"30px"}}/>
         <S.DeadLine>{datas.deadline} 까지</S.DeadLine>
 

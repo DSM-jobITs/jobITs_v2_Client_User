@@ -19,8 +19,8 @@ export const Container = styled.div`
   width: 100%;
   height: 90vh;
   background: #fff;
-  color: #cfcfcf;
-  font-size: 60px;
+  color: #52d15c;
+  font-size: 6.25rem;
 `
 
 export const Span = styled.span`
