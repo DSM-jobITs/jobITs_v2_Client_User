@@ -5,9 +5,12 @@ const ani = keyframes`
     transform: translateY(0px);
   }
   30%{
-    transform: translateY(-70px);
+    transform: translateY(-80px);
   }
-  50,100%{
+  50%{
+    transform: translateY(0px);
+  }
+  100%{
     transform: translateY(0px);
   }
 `

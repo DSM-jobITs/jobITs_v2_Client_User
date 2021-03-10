@@ -6,7 +6,7 @@ const Wait = () => {
   setTimeout(() => {  
   const element = document.querySelectorAll('span');
   for(let i = 0; i<element.length;i++){
-    element[i].style.animationDelay = i*0.15 + 's';
+    element[i].style.animationDelay = i*0.07 + 's';
   }
   console.log(element.length)
   },100)
