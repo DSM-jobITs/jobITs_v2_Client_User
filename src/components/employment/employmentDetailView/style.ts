@@ -51,7 +51,7 @@ export const Introduce = styled.div`
   border: 1px solid #D5D5D5;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-  font-size: 0.9375rem;
+  font-size: 0.975rem;
 `
 
 export const ComplexBox = styled.div`

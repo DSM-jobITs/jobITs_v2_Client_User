@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from '../style';
 
 const Etc = ({personnel,recruitPlan,reception,file}:any) => {
+
   return (
     <S.ComplexBox>
       <S.Text>기타</S.Text>
@@ -19,8 +20,8 @@ const Etc = ({personnel,recruitPlan,reception,file}:any) => {
       </S.BoxInner>
       <S.FileInner>
         <S.InnerText fixed>첨부 파일</S.InnerText>
-        {file.map((f:any)=>(
-          <S.File href={"https://jobitsdsm.s3.ap-northeast-2.amazonaws.com/"+"EC%97%AC%EC%9A%B0"}>{f.name}</S.File>
+        {file && file.map((f:any)=>(
+          <S.File key={f.url} href={"https://jobitsdsm.s3.ap-northeast-2.amazonaws.com/"+f.url}>{f.name}</S.File>
         ))}
       </S.FileInner>
     </S.ComplexBox>
