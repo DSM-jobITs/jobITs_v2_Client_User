@@ -1,4 +1,3 @@
-import { IpcNetConnectOpts } from 'net'
 import styled from "styled-components"
 
 export const Main = styled.div`
