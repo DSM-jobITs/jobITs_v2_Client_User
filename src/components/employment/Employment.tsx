@@ -38,49 +38,49 @@ const Employment = () => {
 		  deadline: "2021-04-12"
     },
     {
-      entNo: 917281,
+      entNo: 91722381,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 91767281,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 9175281,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 9172181,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 91725581,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 9175481,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",
 		  deadline: "2020-12-10"
     },
     {
-      entNo: 917281,
+      entNo: 9117281,
 		  entName: "EJN",
 		  introduction: "주식회사 EJN은 ......",
 		  workContent: "HTML,CSS,JS",

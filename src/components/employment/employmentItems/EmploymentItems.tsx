@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 
 const EmploymentItems = ({name,introduce,skills,deadline}: any) => {
+  const [introduceCut,setIntroduceCut] = useState(introduce);
+  const temp = introduceCut;
+  const stringCutter = 30;
+  introduceCut.length>stringCutter ? setIntroduceCut(temp.slice(0,stringCutter)) : "";
+
   return (
     <S.Main>
       <S.CompanyName>{name}</S.CompanyName>
-      <S.Introduce>{introduce}</S.Introduce>
+      <S.Introduce>{introduceCut.length==stringCutter?introduceCut+"...":introduceCut}</S.Introduce>
       <hr style={{width:"57.375rem", border:"1px solid #D5D5D5"}}/>
       <S.Skills>{skills}</S.Skills>
       <S.DeadLine>{deadline}</S.DeadLine>
