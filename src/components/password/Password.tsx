@@ -1,4 +1,5 @@
 import React,{ useState } from 'react';
+import axios from 'axios';
 import * as S from './style';
 
 const Password = () => {
@@ -23,6 +24,22 @@ const Password = () => {
     if(password !== newPassword){
       setIsError(false);
     }
+  }
+
+  const submit = () => {
+    axios({
+      method:"POST",
+      url: '/signin/password',
+      data:{
+        "oldPw": currentPassword,
+        "newPw": newPassword
+      }
+    }).then((res)=>{
+      console.log(res);
+    }).catch((error)=>{
+      console.log(error);
+      setIsError(true);
+    })
   }
 
   return (
@@ -59,7 +76,7 @@ const Password = () => {
         </div>
         <S.Submit onClick={checkPassword}>비밀번호 변경</S.Submit>
         <div>{currentPassword}-{password}-{newPassword}</div>
-        <S.ErrorText error={isError}>비밀번호가 </S.ErrorText>
+        <S.ErrorText error={isError}>비밀번호가 일치하지 않습니다.</S.ErrorText>
       </S.LoginForm>
     </S.Main>
   );
