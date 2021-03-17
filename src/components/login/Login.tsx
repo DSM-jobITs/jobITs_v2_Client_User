@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import * as S from './style'; 
 
 const Login = () => {
@@ -18,10 +19,28 @@ const Login = () => {
     setInputs(nextInputs);
   }
 
+  const submit = () => {
+    axios({
+      method:"POST",
+      url: '/signin/basic',
+      data:{
+        "id": id,
+        "password": password
+      }
+    }).then((res)=>{
+      console.log(res);
+      // localStorage.setItem("token",JSON.stringify(res.accessToken));
+      // localStorage.setItem("refresh",JSON.stringify(res.refreshToken));
+    }).catch(error=>{
+      console.log(error);
+      setIsError(true);
+    })
+  }
+
   return (
     <S.Main>
       <S.LoginForm>
-        <S.Rabbit src='/src/assets/images/Rabbit.png' alt="토끼" />
+        <S.Rabbit src='/src/assets/images/Rabbit.png' alt="rabbit" />
         <S.LoginText text="main">LOGIN</S.LoginText>
         <S.LoginText text="welcome">Welcome to jobITs</S.LoginText>
         <S.LoginText text="sub">로그인하여 다양한 기업정보를 확인해보세요.</S.LoginText>
@@ -37,7 +56,7 @@ const Login = () => {
         <div>
           <S.Input 
             name="password"
-            type="password" 
+            type="password"
             placeholder="password"
             onChange={onChange}
             value={password}
