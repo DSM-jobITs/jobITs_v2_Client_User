@@ -16,7 +16,6 @@ const Header = () => {
       const config = {
         headers : { Authorization: "Bearer "+token}
       }
-      console.log(config);
       if(token){
         const response: any = await axios.get(basicURL+"/info/name",config);
         setName(response.data.data.name);
@@ -56,7 +55,7 @@ const Header = () => {
               <S.User onClick={showUserBox}>
                 {name} 님
                 <S.UserBox show={isShow}>
-                  <S.UserBoxItems>비밀번호 변경</S.UserBoxItems>
+                  <Link style={{margin:"auto",marginTop:"25px",textDecoration:"none"}} to="/password"><S.UserBoxItems>비밀번호 변경</S.UserBoxItems></Link>
                   <S.UserBoxItems onClick={logout}>로그아웃</S.UserBoxItems>
                 </S.UserBox>
               </S.User> :

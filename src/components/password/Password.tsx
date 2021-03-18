@@ -1,16 +1,18 @@
 import React,{ useState } from 'react';
 import axios from 'axios';
 import * as S from './style';
+import { basicURL } from '../const';
 
-const Password = () => {
+const Password = ({history}:any) => {
   const [isError,setIsError] = useState(false);
+  const [errorMsg,setErrorMsg] = useState("wfef");
   const [inputs, setInputs] = useState({
-    password: '',
-    currentPassword: '',
+    checkPassword: '',
+    oldPassword: '',
     newPassword: '',
   })
 
-  const {password, currentPassword, newPassword} = inputs;
+  const {checkPassword, oldPassword, newPassword} = inputs;
   const onChange = (e: any) => {
     const {name, value} = e.target;
     const nextInputs = {
@@ -19,27 +21,33 @@ const Password = () => {
     }
     setInputs(nextInputs);
   }
-
-  const checkPassword = () => {
-    if(password !== newPassword){
-      setIsError(false);
-    }
+  
+  let token: any = localStorage.getItem("token");
+  token = token.replace(/["]+/g, '');
+  const headers = { 
+    Authorization: "Bearer "+token
   }
 
   const submit = () => {
-    axios({
-      method:"POST",
-      url: '/signin/password',
-      data:{
-        "oldPw": currentPassword,
-        "newPw": newPassword
-      }
-    }).then((res)=>{
-      console.log(res);
-    }).catch((error)=>{
-      console.log(error);
+    if(checkPassword !== newPassword){
       setIsError(true);
-    })
+      setErrorMsg("비밀번호를 확인해주세요.")
+    } else if(checkPassword == '' || oldPassword == '' || newPassword == ''){
+      setIsError(true);
+      setErrorMsg("비밀번호를 확인해주세요.")
+    } else {
+      let pw = {
+        newPw: newPassword,
+        oldPw: oldPassword
+      }
+      axios.post(basicURL+"/signin/password/",pw,{headers})
+      .then((res)=>{
+        history.push("/");
+      })
+      .catch((err)=>{
+        console.log(err.request.status);
+      })
+    }
   }
 
   return (
@@ -49,20 +57,20 @@ const Password = () => {
         <S.LoginText text="sub">8 ~ 20자 영어, 숫자, 특수기호</S.LoginText>
         <div>
           <S.Input 
-            name="currentPassword"
+            name="oldPassword"
             type="password" 
             placeholder="현재 비밀번호"
             onChange={onChange}
-            value={currentPassword}
+            value={oldPassword}
           />
         </div>
         <div>
           <S.Input 
-            name="password"
+            name="checkPassword"
             type="password" 
             placeholder="비밀번호" 
             onChange={onChange}
-            value={password}
+            value={checkPassword}
           />
         </div>
         <div>
@@ -74,8 +82,8 @@ const Password = () => {
             value={newPassword}
           />
         </div>
-        <S.Submit onClick={checkPassword}>비밀번호 변경</S.Submit>
-        <S.ErrorText error={isError}>비밀번호가 일치하지 않습니다.</S.ErrorText>
+        <S.Submit onClick={submit}>비밀번호 변경</S.Submit>
+        <S.ErrorText error={isError}>{errorMsg}</S.ErrorText>
       </S.LoginForm>
     </S.Main>
   );

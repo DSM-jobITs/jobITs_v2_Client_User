@@ -34,7 +34,7 @@ const Login = ({history}: any) => {
       localStorage.setItem("refresh",JSON.stringify(res.data.data.refreshToken));
       history.push("/");
     }).catch(error=>{
-      console.log(error);
+      // console.log(error);
       setIsError(true);
     })
   }
