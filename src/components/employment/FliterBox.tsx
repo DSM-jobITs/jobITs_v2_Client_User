@@ -1,9 +1,9 @@
-import React, { useDebugValue, useEffect, useState } from 'react';
-import * as S from './style';
+import React, { useState } from 'react';
+import axios from 'axios';
+import * as S from './filterStyle';
 import * as C from './comboBoxStyle';
-import { stringify } from 'querystring';
 
-const FliterBox = () => {
+const FliterBox = ({setPosts}: any) => {
   const [inputs, setInputs] = useState({  
     company: '',
     work: '',
@@ -12,7 +12,6 @@ const FliterBox = () => {
   const [members,setMembers] = useState(null);
 
   const { company, work, location } = inputs;
-
   const onChange = (e: any) => {
     const { name, value } = e.target;
     const nextInputs = {
@@ -35,6 +34,21 @@ const FliterBox = () => {
       && ((inputs.location.length > 1) || (inputs.location == '')))) {
       console.log(inputs);
       /*axios로 필터링된 데이터 요청하기*/
+      axios({
+        method:"POST",
+        url: '/recruit/search',
+        data:{
+          "entName":company,
+          "workContent":work,
+          "address":location,
+          "numOfWorker":members
+        }
+      }).then((res: any)=>{
+        console.log(res);
+        setPosts(res);
+      }).catch(error=>{
+        console.log(error);
+      })
     }
   }
 
@@ -80,10 +94,10 @@ const FliterBox = () => {
           />
         </div>
         <div>
-          {company}:{work}:{location}
+          {company}:{work}:{location}:{members}
         </div>
         <S.BottomWrapper>
-          <S.FilterText>원하시는 검색 조건을 선택(입력)하신 뒤에 결과를 조회해주세요.</S.FilterText>
+          <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)하신 뒤에 결과를 조회해주세요. </S.FilterText>
           <S.SearchButton onClick={checkInput}>검색하기</S.SearchButton>
         </S.BottomWrapper>
       </S.FilterBoxInner>
