@@ -4,11 +4,11 @@ import * as S from './style';
 const EmploymentItems = () => {
   return (
     <S.Main>
-      <S.CompanyName>미란다</S.CompanyName>
-      <S.Introduce>미란다 최고!</S.Introduce>
+      <S.CompanyName>회사 이름</S.CompanyName>
+      <S.Introduce>간단한 회사 소개</S.Introduce>
       <hr style={{width:"57.375rem", border:"1px solid #D5D5D5"}}/>
-      <S.Skills>Vue.js React.js TypeScript</S.Skills>
-      <S.DeadLine>2020.11.27 마감</S.DeadLine>
+      <S.Skills>기술 스택을 보여줍니다.</S.Skills>
+      <S.DeadLine>마감 시간을 보여줍니다.</S.DeadLine>
     </S.Main>
   );
 };
