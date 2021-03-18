@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import FilterBox from './FliterBox';
 import Pagination from './pagination/Pagination';
 import Posts from './pagination/Posts';
+import {config, basicURL} from '../const';
 import * as S from './style';
 
 const Employment = () => {
@@ -13,12 +14,9 @@ const Employment = () => {
   const [postsPerPage, setPostPerPage] = useState(6);
 
   useEffect(() => {
-    const config = {
-      headers : { Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9iaXRzQGRzbS5ocy5rciIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MTU5NDc2OTgsImV4cCI6MTYxNjgxMTY5OCwiaXNzIjoiSm9iSVRzIn0.xHyhsZ5ZtXdZWyiXNtGNuU6Ltxw56C8Iw_YT8W_p6N0"}
-    };
     const fetchData = async () => {
       setLoading(true);
-      const response = await axios.get('http://54.180.2.226/recruit/basic',config);
+      const response = await axios.get(basicURL+'/recruit/basic',config);
       setPosts(response.data);
       setLoading(false);
     }
@@ -41,7 +39,7 @@ const Employment = () => {
           <S.Management>기업 관리</S.Management>
           <S.Add>기업 추가</S.Add>
         </S.AdminBox>
-        <FilterBox />
+        <FilterBox setPosts={setPosts}/>
         <S.DetailViewWarpper>
           <S.Text>검색 결과 {posts.length}</S.Text>
           <S.InputBox>
@@ -53,7 +51,6 @@ const Employment = () => {
           <Posts posts={currentPosts(posts)} loading={loading}></Posts>
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
-        <S.Design></S.Design>
       </S.Main>
     </div>
   );

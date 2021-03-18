@@ -7,17 +7,16 @@ import Etc from './infoBox/Etc';
 import Wait from './Wait';
 import axios from 'axios';
 import * as S from './style';
+import {detailConfig,basicURL} from '../../const';
 
 const EmploymentDetailView = ({ history }: any) => {
   const [datas, setDatas] = useState<any>({});
-  const config = {
-    headers : { Authorization : ""}
-  };
   useEffect(() => {
     const fetchData = async () => {
-      let id = history.location.pathname;
-      id = id.replace(/[^0-9]/g,'');
-      const response = await axios.get('http://54.180.2.226/recruit/detail/462889c9252890cd883c18c1fb6abb',config);
+      // let id = history.location.pathname;
+      // id = id.replace(/[^0-9]/g,'');
+      let id = "462889c9252890cd883c18c1fb6abb";
+      const response = await axios.get(basicURL+'/recruit/detail/462889c9252890cd883c18c1fb6abb',detailConfig);
       setDatas(response.data);
     }
     fetchData();
