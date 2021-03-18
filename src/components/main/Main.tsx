@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Preview from '../preview/Preview';
 import Header from '../header/Header';
+import Footer from "../footer/Footer";
 import {hello} from "../../scripts/alert";
 import * as S from './style';
 
@@ -39,6 +40,7 @@ const Main = () => {
         </S.NavWarp>
       </S.Nav>
       <Preview />
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 type active = {
   active: boolean;
@@ -57,4 +58,21 @@ export const PreviewTemplate = styled.div`
   background: ${props => props.theme.color.background};
   border-radius: 5px;
   box-shadow: 5px 5px 15px rgba(90, 90, 90, 0.16);
+`
+
+export const Links = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  text-decoration: none;
+  :visited{
+    color: #707070;
+  
+  }
+  :active{
+    color: #707070;
+  }
 `
