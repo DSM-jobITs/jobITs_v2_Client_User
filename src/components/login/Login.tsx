@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {basicURL} from '../const';
 import * as S from './style'; 
 
-const Login = () => {
+const Login = ({history}: any) => {
   const [isError,setIsError] = useState(false);
   const [inputs, setInputs] = useState({
     id: '',
@@ -22,15 +23,16 @@ const Login = () => {
   const submit = () => {
     axios({
       method:"POST",
-      url: '/signin/basic',
+      url: basicURL+'/signin/basic',
       data:{
         "id": id,
         "password": password
       }
-    }).then((res)=>{
-      console.log(res);
-      // localStorage.setItem("token",JSON.stringify(res.accessToken));
-      // localStorage.setItem("refresh",JSON.stringify(res.refreshToken));
+    }).then((res: any)=>{
+      console.log(res.data.data.accessToken);
+      localStorage.setItem("token",JSON.stringify(res.data.data.accessToken));
+      localStorage.setItem("refresh",JSON.stringify(res.data.data.refreshToken));
+      history.push("/");
     }).catch(error=>{
       console.log(error);
       setIsError(true);
@@ -54,7 +56,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <S.Input 
+          <S.Input
             name="password"
             type="password"
             placeholder="password"
@@ -63,7 +65,7 @@ const Login = () => {
           />
         </div>
         <S.ErrorText error={isError}>아이디 혹은 비밀번호가 틀렸습니다.</S.ErrorText>
-        <S.Submit>Sign in</S.Submit>
+        <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
     </S.Main>
   );
