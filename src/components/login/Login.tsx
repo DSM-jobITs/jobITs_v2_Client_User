@@ -29,7 +29,7 @@ const Login = ({history}: any) => {
         "password": password
       }
     }).then((res: any)=>{
-      console.log(res.data.data.accessToken);
+      
       localStorage.setItem("token",JSON.stringify(res.data.data.accessToken));
       localStorage.setItem("refresh",JSON.stringify(res.data.data.refreshToken));
       history.push("/");

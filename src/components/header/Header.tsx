@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './style';
 
@@ -6,11 +6,19 @@ const Header = () => {
   const [isShow,setIsShow] = useState(false);
   const [isLogin,setIsLogin] = useState(false);
 
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if(token){
+      setIsLogin(true);
+    }
+  })
+  
   const showUserBox = () => {
     setIsShow(!(isShow))
   }
 
   const logout = () => {
+    localStorage.removeItem("token");
     setIsLogin(false);
   }
 
