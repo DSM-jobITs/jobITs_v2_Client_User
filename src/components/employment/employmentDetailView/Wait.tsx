@@ -8,7 +8,6 @@ const Wait = () => {
   for(let i = 0; i<element.length;i++){
     element[i].style.animationDelay = i*0.07 + 's';
   }
-  console.log(element.length)
   },100)
 
   return (
