@@ -1,12 +1,12 @@
 import React from 'react';
 import * as P from '../globalPreviewStlye';
 
-const ItemsWrapper = ({no,title,date}: any) => {
+const ItemsWrapper = ({recruitNum,entName,reception}: any) => {
   return (
     <P.ItemsWrapper>
-      <P.Items>5</P.Items>
-      <P.Items text>마이다스 아이티</P.Items>
-      <P.Items>2020 / 11 / 11</P.Items>
+      <P.Items>{recruitNum}</P.Items>
+      <P.Items text>{entName}</P.Items>
+      <P.Items>{reception}</P.Items>
     </P.ItemsWrapper>
   );
 };

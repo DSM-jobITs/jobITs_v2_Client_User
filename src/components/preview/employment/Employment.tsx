@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import * as P from '../globalPreviewStlye';
 import ItemsWrapper from './ItemsWrapper';
 import axios from 'axios';
+import {basicURL} from '../../const';
 
 const Employment = () => {
   const [datas,setDatas] = useState<any>([]);
 
   useEffect(()=>{
     const fetchData = async () => {
-      const response = await axios.get('url');
+      const response = await axios.get(basicURL+'/home/notice');
       setDatas(response.data);
     }
     fetchData();
@@ -26,9 +27,9 @@ const Employment = () => {
         datas &&
         datas.map( (d:any) => (
           <ItemsWrapper
-            no={d.no}
-            title={d.title}
-            date={d.date}
+            recruitNum={d.recruitNum}
+            entName={d.entName}
+            reception={d.reception}
           />
         ))
       }
