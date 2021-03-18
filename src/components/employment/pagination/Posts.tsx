@@ -14,14 +14,16 @@ const Posts = ({posts, loading}: any) => {
       { loading && 
         <div> loading... </div>
       }
-        {posts.map((post: {entNo:any;entName:any;introduction:any;workContent:any;deadline:any;})=>(
-          <Links to={"employment/"+post.entNo} key={post.entNo}>
+        {posts.map((post: {recruit_id:any;enterprise_name:any;
+        enterprise_introduce:any;specialty_specialty:any;
+        recruit_deadline:any;})=>(
+          <Links to={"employment/"+post.recruit_id} key={post.recruit_id}>
             <EmploymentItems
-              key={post.entNo}
-              name={post.entName}
-              introduce={post.introduction}
-              skills={post.workContent}
-              deadline={post.deadline}
+              key={post.recruit_id}
+              name={post.enterprise_name}
+              introduce={post.enterprise_introduce}
+              skills={post.specialty_specialty}
+              deadline={post.recruit_deadline}
             />
           </Links>
         ))}

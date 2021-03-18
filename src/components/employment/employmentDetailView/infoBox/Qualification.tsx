@@ -2,8 +2,15 @@ import React from 'react';
 import * as S from '../style';
 
 const Qualification = ({certificate,grade,specialty}: any) => {
-  const certificateStr = certificate.join('  ');
-  const specialtyStr = specialty.join('  ');
+  let certificateStr = certificate;
+  let specialtyStr = specialty;
+
+  if(certificateStr !== null){
+    certificateStr = certificate.join('  ');
+  }
+  if(certificateStr !== null){
+    specialtyStr = certificate.join('  ');
+  }
 
   return (
     <S.ComplexBox>

@@ -15,8 +15,8 @@ const EmploymentDetailView = ({ history }: any) => {
     const fetchData = async () => {
       // let id = history.location.pathname;
       // id = id.replace(/[^0-9]/g,'');
-      let id = "462889c9252890cd883c18c1fb6abb";
-      const response = await axios.get(basicURL+'/recruit/detail/462889c9252890cd883c18c1fb6abb',detailConfig);
+      let id = "42b5e1103e74e54dbffa8beb331b67";
+      const response = await axios.get(basicURL+'/recruit/detail/'+id,detailConfig);
       setDatas(response.data);
     }
     fetchData();
@@ -45,7 +45,7 @@ const EmploymentDetailView = ({ history }: any) => {
             {datas.workContent}
           </div>
         </S.Introduce>
-
+          
           <Qualification 
             certificate={datas.qualification.certificate}
             grade={datas.qualification.grade}
