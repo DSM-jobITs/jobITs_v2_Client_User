@@ -7,86 +7,23 @@ import Posts from './pagination/Posts';
 import * as S from './style';
 
 const Employment = () => {
-  // const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(6);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     setLoading(true);
-  //     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  //     setPosts(response.data);
-  //     setLoading(false);
-  //   }
-  //   fetchData();
-  // },[]);
-
-  const posts = [
-    {
-      entNo: 138290,
-		  entName: "노티플러스",
-		  introduction: "주식회사 노티플러스는 ......",
-		  workContent: "파이썬을 이용한 AI",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 357120,
-		  entName: "데브시스터즈",
-		  introduction: "주식회사 데브시스터즈는 ......",
-		  workContent: "게임 개발",
-		  deadline: "2021-04-12"
-    },
-    {
-      entNo: 91722381,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 91767281,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 9175281,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 9172181,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 91725581,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 9175481,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-    {
-      entNo: 9117281,
-		  entName: "EJN",
-		  introduction: "주식회사 EJN은 ......",
-		  workContent: "HTML,CSS,JS",
-		  deadline: "2020-12-10"
-    },
-  ]
+  useEffect(() => {
+    const config = {
+      headers : { Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiam9iaXRzQGRzbS5ocy5rciIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MTU5NDc2OTgsImV4cCI6MTYxNjgxMTY5OCwiaXNzIjoiSm9iSVRzIn0.xHyhsZ5ZtXdZWyiXNtGNuU6Ltxw56C8Iw_YT8W_p6N0"}
+    };
+    const fetchData = async () => {
+      setLoading(true);
+      const response = await axios.get('http://54.180.2.226/recruit/basic',config);
+      setPosts(response.data);
+      setLoading(false);
+    }
+    fetchData();
+  },[]);
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
