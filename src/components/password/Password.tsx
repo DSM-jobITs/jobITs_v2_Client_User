@@ -75,7 +75,6 @@ const Password = () => {
           />
         </div>
         <S.Submit onClick={checkPassword}>비밀번호 변경</S.Submit>
-        <div>{currentPassword}-{password}-{newPassword}</div>
         <S.ErrorText error={isError}>비밀번호가 일치하지 않습니다.</S.ErrorText>
       </S.LoginForm>
     </S.Main>
