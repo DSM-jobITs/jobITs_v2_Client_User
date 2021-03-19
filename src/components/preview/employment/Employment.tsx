@@ -8,9 +8,15 @@ const Employment = () => {
   const [datas,setDatas] = useState<any>([]);
 
   useEffect(()=>{
-    const fetchData = async () => {
-      const response = await axios.get(basicURL+'/home/notice');
-      setDatas(response.data);
+    const fetchData = () => {
+      axios.get(basicURL+'/home/notice').then((res)=>{
+        setDatas(res.data);
+      }).catch((err)=>{
+        console.log(err.message);
+      })
+      // const response = await axios.get(basicURL+"/home/notice");
+      // setDatas(response.data);
+      // console.log(datas);
     }
     fetchData();
   },[])
