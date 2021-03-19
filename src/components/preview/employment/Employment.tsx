@@ -14,9 +14,6 @@ const Employment = () => {
       }).catch((err)=>{
         console.log(err.message);
       })
-      // const response = await axios.get(basicURL+"/home/notice");
-      // setDatas(response.data);
-      // console.log(datas);
     }
     fetchData();
   },[])
