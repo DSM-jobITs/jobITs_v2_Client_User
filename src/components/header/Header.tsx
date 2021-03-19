@@ -12,11 +12,11 @@ const Header = () => {
   useEffect(()=>{
     const fetchData = async () =>{
       let token: any = localStorage.getItem("token");
-      token = token.replace(/["]+/g, '');
-      const config = {
-        headers : { Authorization: "Bearer "+token}
-      }
       if(token){
+        token = token.replace(/["]+/g, '');
+        const config = {
+          headers : { Authorization: "Bearer "+token}
+        }
         const response: any = await axios.get(basicURL+"/info/name",config);
         setName(response.data.data.name);
         setIsLogin(true);
