@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import axios from 'axios';
 import * as S from './style';
-import { basicURL } from '../const';
+import { baseURL } from '../const';
 
 const Password = ({history}:any) => {
   const [isError,setIsError] = useState(false);
@@ -28,6 +28,12 @@ const Password = ({history}:any) => {
     Authorization: "Bearer "+token
   }
 
+  const enter = (e: any) => {
+    if(e.key == "Enter"){
+      submit();
+    }
+  }
+
   const submit = () => {
     if(checkPassword !== newPassword){
       setIsError(true);
@@ -40,7 +46,7 @@ const Password = ({history}:any) => {
         newPw: newPassword,
         oldPw: oldPassword
       }
-      axios.post(basicURL+"/signin/password/",pw,{headers})
+      axios.post(baseURL+"/signin/password/",pw,{headers})
       .then((res)=>{
         history.push("/");
       })
@@ -79,6 +85,7 @@ const Password = ({history}:any) => {
             type="password" 
             placeholder="비밀번호 확인" 
             onChange={onChange}
+            onKeyPress={enter}
             value={newPassword}
           />
         </div>

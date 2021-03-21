@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {basicURL} from '../const';
+import {baseURL} from '../const';
 import * as S from './style'; 
+import { keyframes } from 'styled-components';
 
 const Login = ({history}: any) => {
   const [isError,setIsError] = useState(false);
@@ -20,10 +21,16 @@ const Login = ({history}: any) => {
     setInputs(nextInputs);
   }
 
+  const enter = (e: any) => {
+    if(e.key == "Enter"){
+      submit();
+    }
+  }
+
   const submit = () => {
     axios({
       method:"POST",
-      url: basicURL+'/signin/basic',
+      url: baseURL+'/signin/basic',
       data:{
         "id": id,
         "password": password
@@ -62,6 +69,7 @@ const Login = ({history}: any) => {
             placeholder="password"
             onChange={onChange}
             value={password}
+            onKeyPress={enter}
           />
         </div>
         <S.ErrorText error={isError}>아이디 혹은 비밀번호가 틀렸습니다.</S.ErrorText>
