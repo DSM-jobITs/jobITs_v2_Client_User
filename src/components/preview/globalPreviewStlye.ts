@@ -20,7 +20,7 @@ export const Title = styled.div`
   color: #4d4d4d;
 `
 
-export const ItemsTitleWarpper = styled.div<name>`
+export const ItemsTitleWrapper = styled.div<name>`
   display: grid;
   grid-template-columns: 2fr 10fr 3fr;
   width: 100%;
@@ -34,12 +34,15 @@ export const ItemsTitle = styled.div<name>`
   font-size: 1.075rem;
 `
 
-export const ItemsWarpper = styled.div`
+export const ItemsWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr 3fr;
   width: 100%;
   height: 16.5%;
   cursor: pointer;
+  :nth-child(even){
+    background: #EAFFE0;
+  }
 `
 
 export const Items = styled.div<name>`
