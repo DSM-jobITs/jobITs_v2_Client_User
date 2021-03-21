@@ -2,23 +2,21 @@ import React, { useEffect, useState } from 'react';
 import * as P from '../globalPreviewStlye';
 import ItemsWrapper from './ItemsWrapper';
 import axios from 'axios';
-import {basicURL} from '../../const';
+import {baseURL} from '../../const';
 
 const HomeEmployment = () => {
   const [datas,setDatas] = useState<any>([]);
 
   useEffect(()=>{
     const fetchData = () => {
-      axios.get(basicURL+'/home/notice').then((res)=>{
+      axios.get(baseURL+'/home/notice').then((res)=>{
         setDatas(res.data.data.recruit_list);
       }).catch((err)=>{
-        console.log(err.message);
       })
     }
     fetchData();
   },[])
 
-  console.log(datas);
 
   return (
     <P.Main>

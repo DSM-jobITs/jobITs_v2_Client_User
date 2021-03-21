@@ -11,7 +11,6 @@ export const Main = styled.div`
   width: 85%;
   height: 85%;
   overflow: hidden;
-  /* background-color: #333; */
 `
 
 export const Title = styled.div`
@@ -38,10 +37,28 @@ export const ItemsWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr 3fr;
   width: 100%;
-  height: 16.5%;
+  height: 15.7%;
   cursor: pointer;
+  overflow: hidden;
   :nth-child(even){
     background: #EAFFE0;
+  }
+  ::before{
+    content:"";
+    position:absolute;
+    width: 90%;
+    height: 60px;
+    left: -90%;
+    background: #fff;
+    opacity: 0.1;
+    transition: all ease-out 0.3s;
+  }
+
+  :hover::before{
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #44E14A;
   }
 `
 
