@@ -26,7 +26,7 @@ const FliterBox = ({setPosts}: any) => {
     token = token.replace(/["]+/g, '');
   }
   const config = {
-    headers : { Authorization: "Bearer "+token}
+    headers : { Authorization: "Bearer "+token }
   }
 
   const memberSelect = (e: any) => {
@@ -42,9 +42,30 @@ const FliterBox = ({setPosts}: any) => {
       && ((inputs.address.length > 1) || (inputs.address == '')))) {
 
       /*axios로 필터링된 데이터 요청하기*/
-      const response: any = axios.get(baseURL+"/recruit/search"+"?entName="+entName+"?workContent="+workContent+"?address="+address+"?numOfWorker="+numOfWorker,config);
-      console.log(response);
-      setPosts();
+      // axios.get(baseURL+"/recruit/search"+"entName="+entName+"?workContent="+workContent+"?address="+address+"?numOfWorker="+numOfWorker,config)
+      // .then((res)=>{
+      //   console.log(res);
+      // // setPosts();
+      // }).catch((err)=>{
+      //   console.log(err.message);
+      // })
+      axios({
+        url: baseURL+"/recruit/search",
+        method: "GET",
+        params: {
+          entName:entName,
+          workContent:workContent,
+          address:address,
+          numOfWorker: numOfWorker
+        },
+        headers: config.headers
+      }).then((res)=>{
+        console.log(res);
+        setPosts(res.data.data.list);
+      })
+      .catch((err)=>{
+        console.log(err.message)
+      })
     }
   }
 
