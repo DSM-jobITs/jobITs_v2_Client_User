@@ -4,19 +4,21 @@ import ItemsWrapper from './ItemsWrapper';
 import axios from 'axios';
 import {basicURL} from '../../const';
 
-const Employment = () => {
+const HomeEmployment = () => {
   const [datas,setDatas] = useState<any>([]);
 
   useEffect(()=>{
     const fetchData = () => {
       axios.get(basicURL+'/home/notice').then((res)=>{
-        setDatas(res.data);
+        setDatas(res.data.data.recruit_list);
       }).catch((err)=>{
         console.log(err.message);
       })
     }
     fetchData();
   },[])
+
+  console.log(datas);
 
   return (
     <P.Main>
@@ -27,12 +29,13 @@ const Employment = () => {
         <P.ItemsTitle name="Date">등록일</P.ItemsTitle>
       </P.ItemsTitleWrapper>
       {
-        datas &&
+        (datas!==undefined) &&
         datas.map( (d:any) => (
           <ItemsWrapper
-            recruitNum={d.recruitNum}
-            entName={d.entName}
-            reception={d.reception}
+            key={d.recruit_no}
+            recruitNum={d.recruit_no}
+            entName={d.enterprise_name}
+            reception={d.recruit_reception}
           />
         ))
       }
@@ -40,4 +43,4 @@ const Employment = () => {
   );
 };
 
-export default Employment;
+export default HomeEmployment;
