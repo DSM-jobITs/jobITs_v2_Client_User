@@ -30,6 +30,7 @@ export const Logo = styled.img`
   margin-top: 0.4rem;
   margin-left: -0.625rem;
   align-self: center;
+  outline: none;
 `
 
 export const NavWarp = styled.div`
