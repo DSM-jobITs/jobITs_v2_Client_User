@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import EmploymentItems from '../employmentItems/EmploymentItems';
+import Wait from '../employmentDetailView/Wait';
 
 const Links = styled(Link)`
   text-decoration: none;
@@ -12,7 +13,7 @@ const Posts = ({posts, loading}: any) => {
   return (
     <>
       { loading && 
-        <div> loading... </div>
+        <Wait />
       }
         {posts.map((post: {recruit_id:any;enterprise_name:any;
         enterprise_introduce:any;specialty_specialty:any;
