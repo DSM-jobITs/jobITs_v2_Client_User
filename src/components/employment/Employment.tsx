@@ -4,7 +4,7 @@ import Header from '../header/Header';
 import FilterBox from './FliterBox';
 import Pagination from './pagination/Pagination';
 import Posts from './pagination/Posts';
-import {config, basicURL} from '../const';
+import {detailConfig, basicURL} from '../const';
 import * as S from './style';
 
 const Employment = () => {
@@ -13,15 +13,15 @@ const Employment = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(6);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await axios.get(basicURL+'/recruit/basic',config);
-      setPosts(response.data);
-      setLoading(false);
-    }
-    fetchData();
-  },[]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     const response = await axios.get(basicURL+'/recruit/basic',detailConfig);
+  //     setPosts(response.data);
+  //     setLoading(false);  
+  //   }
+  //   fetchData();
+  // },[]);
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;

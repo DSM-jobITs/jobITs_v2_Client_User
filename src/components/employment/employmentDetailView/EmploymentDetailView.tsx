@@ -11,13 +11,20 @@ import {detailConfig,basicURL} from '../../const';
 
 const EmploymentDetailView = ({ history }: any) => {
   const [datas, setDatas] = useState<any>({});
+
   useEffect(() => {
     const fetchData = async () => {
       // let id = history.location.pathname;
       // id = id.replace(/[^0-9]/g,'');
-      let id = "42b5e1103e74e54dbffa8beb331b67";
-      const response = await axios.get(basicURL+'/recruit/detail/'+id,detailConfig);
-      setDatas(response.data);
+      // let id = "42b5e1103e74e54dbffa8beb331b67";
+      // console.log("hello");
+      // let response: any = await axios.get(basicURL+'/recruit/detail/42b5e1103e74e54dbffa8beb331b67',detailConfig);
+      // setDatas(response.data);
+      axios.get(basicURL+"/recruit/detail/4cd30fca496ec2388c8100adfea735",detailConfig).then((res)=>{
+        setDatas(res.data);
+      }).catch((err)=>{
+        console.log(err);
+      })
     }
     fetchData();
   },[]);
