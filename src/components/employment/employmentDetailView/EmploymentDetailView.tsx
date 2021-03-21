@@ -14,17 +14,10 @@ const EmploymentDetailView = ({ history }: any) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // let id = history.location.pathname;
-      // id = id.replace(/[^0-9]/g,'');
-      // let id = "42b5e1103e74e54dbffa8beb331b67";
-      // console.log("hello");
-      // let response: any = await axios.get(basicURL+'/recruit/detail/42b5e1103e74e54dbffa8beb331b67',detailConfig);
-      // setDatas(response.data);
-      axios.get(basicURL+"/recruit/detail/4cd30fca496ec2388c8100adfea735",detailConfig).then((res)=>{
-        setDatas(res.data);
-      }).catch((err)=>{
-        console.log(err);
-      })
+      let id = history.location.pathname;
+      id = id.slice(12);
+      let response: any = await axios.get(basicURL+'/recruit/detail/'+id,detailConfig);
+      setDatas(response.data);
     }
     fetchData();
   },[]);
