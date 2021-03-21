@@ -6,13 +6,12 @@ import * as C from './comboBoxStyle';
 
 const FliterBox = ({setPosts}: any) => {
   const [inputs, setInputs] = useState({  
-    company: '',
-    work: '',
-    location: '',
+    entName: '',
+    workContent: '',
+    address: '',
   });
-  const [members,setMembers] = useState(0);
-
-  const { company, work, location } = inputs;
+  const [numOfWorker,setNumOfWorker] = useState<any>(0);
+  const { entName, workContent, address } = inputs;
   const onChange = (e: any) => {
     const { name, value } = e.target;
     const nextInputs = {
@@ -29,27 +28,21 @@ const FliterBox = ({setPosts}: any) => {
   const config = {
     headers : { Authorization: "Bearer "+token}
   }
-  let params: any = {
-    entName: company,
-    workContent: work,
-    address: location,
-    numOfWorker: members
-  }
 
   const memberSelect = (e: any) => {
     let set = Number(e.target.value);
-    setMembers(set);
+    setNumOfWorker(set);
   }
 
   const checkInput = () => {
     /*검색창 3개가 모두 공백이면 검색 불가 및 검색 최소 글자 수 제한*/
-    if(((inputs.company != '') || (inputs.work != '') || (inputs.location != '')) 
-      && (((inputs.company.length > 1) || (inputs.company == ''))
-      && ((inputs.work.length > 1) || (inputs.work == ''))
-      && ((inputs.location.length > 1) || (inputs.location == '')))) {
+    if(((inputs.entName != '') || (inputs.workContent != '') || (inputs.address != '')) 
+      && (((inputs.entName.length > 1) || (inputs.entName == ''))
+      && ((inputs.workContent.length > 1) || (inputs.workContent == ''))
+      && ((inputs.address.length > 1) || (inputs.address == '')))) {
 
       /*axios로 필터링된 데이터 요청하기*/
-      const response: any = axios.post(baseURL+"/recruit/search",params,config);
+      const response: any = axios.get(baseURL+"/recruit/search"+"?entName="+entName+"?workContent="+workContent+"?address="+address+"?numOfWorker="+numOfWorker,config);
       console.log(response);
       setPosts();
     }
@@ -70,34 +63,34 @@ const FliterBox = ({setPosts}: any) => {
         </form>
         <div>
           <S.Search
-            name="company"
+            name="entName"
             type="text" 
             placeholder="기업 명"
             onChange={onChange}
-            value={company}
+            value={entName}
             minLength={2}
           />
           <S.Search 
-            name="work"
+            name="workContent"
             type="text" 
             placeholder="업무내용" 
             style={{marginLeft:21}} 
             onChange={onChange}
-            value={work}
+            value={workContent}
             minLength={2}
           />
           <S.Search 
-            name="location"
+            name="address"
             type="text"
             placeholder="지역" 
             style={{marginLeft:21}} 
             onChange={onChange}
-            value={location}
+            value={address}
             minLength={2}
           />
         </div>
         <div>
-          {company}:{work}:{location}:{members}
+          {entName}:{workContent}:{address}:{numOfWorker}
         </div>
         <S.BottomWrapper>
           <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)하신 뒤에 결과를 조회해주세요. </S.FilterText>
