@@ -55,12 +55,12 @@ const Employment = ({history}: any) => {
         <FilterBox setPosts={setPosts}/>
         <S.DetailViewWarpper>
           <S.Text>검색 결과 {posts.length}</S.Text>
-          <S.InputBox>
+          {/* <S.InputBox> 보류 - 두평이가 안만들었어요
             <S.CheckBox type='radio' name="orderBy" value="resently" defaultChecked></S.CheckBox>
             <span>최신 순</span>
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
-          </S.InputBox>
+          </S.InputBox> */}
           <Posts posts={currentPosts(posts)} loading={loading}></Posts>
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>

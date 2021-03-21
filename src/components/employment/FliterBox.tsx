@@ -42,13 +42,6 @@ const FliterBox = ({setPosts}: any) => {
       && ((inputs.address.length > 1) || (inputs.address == '')))) {
 
       /*axios로 필터링된 데이터 요청하기*/
-      // axios.get(baseURL+"/recruit/search"+"entName="+entName+"?workContent="+workContent+"?address="+address+"?numOfWorker="+numOfWorker,config)
-      // .then((res)=>{
-      //   console.log(res);
-      // // setPosts();
-      // }).catch((err)=>{
-      //   console.log(err.message);
-      // })
       axios({
         url: baseURL+"/recruit/search",
         method: "GET",
@@ -109,9 +102,6 @@ const FliterBox = ({setPosts}: any) => {
             value={address}
             minLength={2}
           />
-        </div>
-        <div>
-          {entName}:{workContent}:{address}:{numOfWorker}
         </div>
         <S.BottomWrapper>
           <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)하신 뒤에 결과를 조회해주세요. </S.FilterText>
