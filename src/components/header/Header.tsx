@@ -1,10 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
-import {basicURL} from '../const';
-import { Link } from 'react-router-dom';
+import {baseURL} from '../const';
+import { Link, withRouter } from 'react-router-dom';
 import * as S from './style';
 
-const Header = () => {
+const Header = ({history}: any) => {
   const [isShow,setIsShow] = useState(false);
   const [name,setName] = useState("");
   const [isLogin,setIsLogin] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
         const config = {
           headers : { Authorization: "Bearer "+token}
         }
-        const response: any = await axios.get(basicURL+"/info/name",config);
+        const response: any = await axios.get(baseURL+"/info/name",config);
         setName(response.data.data.name);
         setIsLogin(true);
       }
@@ -36,6 +36,7 @@ const Header = () => {
   const logout = () => {
     localStorage.removeItem("token");
     setIsLogin(false);
+    history.push("/");
   }
 
   return (
@@ -68,4 +69,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
