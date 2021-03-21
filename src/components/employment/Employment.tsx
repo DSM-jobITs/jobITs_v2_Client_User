@@ -1,24 +1,37 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import Header from '../header/Header';
 import FilterBox from './FliterBox';
 import Pagination from './pagination/Pagination';
 import Posts from './pagination/Posts';
-import {detailConfig, basicURL} from '../const';
+import { baseURL } from '../const';
 import * as S from './style';
 
-const Employment = () => {
+const Employment = ({history}: any) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(6);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       setLoading(true);
-      const response = await axios.get(basicURL+'/recruit/basic',detailConfig);
-      setPosts(response.data.data.list);
-      setLoading(false);  
+      let token: any = localStorage.getItem("token");
+      if(token){
+        token = token.replace(/["]+/g, '');
+      }
+      const config = {
+        headers : { Authorization: "Bearer "+token}
+      }
+      await axios.get(baseURL+'/recruit/basic',config).then((res)=>{
+        setPosts(res.data.data.list);
+        setLoading(false);  
+      }).catch((err)=>{
+        alert("로그인 후 이용할 수 있습니다.");
+        history.push("/login");
+      })
     }
     fetchData();
   },[]);
@@ -56,4 +69,4 @@ const Employment = () => {
   );
 };
 
-export default Employment;
+export default withRouter(Employment);

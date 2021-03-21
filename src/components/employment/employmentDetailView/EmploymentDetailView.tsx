@@ -6,8 +6,9 @@ import EmploymentInfo from './infoBox/EmploymentInfo';
 import Etc from './infoBox/Etc';
 import Wait from './Wait';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import * as S from './style';
-import {detailConfig,basicURL} from '../../const';
+import {baseURL} from '../../const';
 
 const EmploymentDetailView = ({ history }: any) => {
   const [datas, setDatas] = useState<any>({});
@@ -16,8 +17,18 @@ const EmploymentDetailView = ({ history }: any) => {
     const fetchData = async () => {
       let id = history.location.pathname;
       id = id.slice(12);
-      let response: any = await axios.get(basicURL+'/recruit/detail/'+id,detailConfig);
-      setDatas(response.data);
+      let token: any = localStorage.getItem("token");
+      if(token){
+        token = token.replace(/["]+/g, '');
+      }
+      const config = {
+        headers : { Authorization: "Bearer "+token}
+      }
+      await axios.get(baseURL+'/recruit/detail/'+id,config).then((res)=>{
+        setDatas(res.data);
+      }).catch((err)=>{
+        history.push("/");
+      })
     }
     fetchData();
   },[]);
@@ -83,4 +94,4 @@ const EmploymentDetailView = ({ history }: any) => {
   );
 };
 
-export default EmploymentDetailView;
+export default withRouter(EmploymentDetailView);

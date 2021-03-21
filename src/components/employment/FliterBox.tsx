@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {baseURL} from '../const';
 import * as S from './filterStyle';
 import * as C from './comboBoxStyle';
 
@@ -9,7 +10,7 @@ const FliterBox = ({setPosts}: any) => {
     work: '',
     location: '',
   });
-  const [members,setMembers] = useState(null);
+  const [members,setMembers] = useState(0);
 
   const { company, work, location } = inputs;
   const onChange = (e: any) => {
@@ -21,8 +22,22 @@ const FliterBox = ({setPosts}: any) => {
     setInputs(nextInputs);
   }
 
+  let token: any = localStorage.getItem("token");
+  if(token){
+    token = token.replace(/["]+/g, '');
+  }
+  const config = {
+    headers : { Authorization: "Bearer "+token}
+  }
+  let params: any = {
+    entName: company,
+    workContent: work,
+    address: location,
+    numOfWorker: members
+  }
+
   const memberSelect = (e: any) => {
-    const set = e.target.value;
+    let set = Number(e.target.value);
     setMembers(set);
   }
 
@@ -32,23 +47,11 @@ const FliterBox = ({setPosts}: any) => {
       && (((inputs.company.length > 1) || (inputs.company == ''))
       && ((inputs.work.length > 1) || (inputs.work == ''))
       && ((inputs.location.length > 1) || (inputs.location == '')))) {
-      console.log(inputs);
+
       /*axios로 필터링된 데이터 요청하기*/
-      axios({
-        method:"POST",
-        url: '/recruit/search',
-        data:{
-          "entName":company,
-          "workContent":work,
-          "address":location,
-          "numOfWorker":members
-        }
-      }).then((res: any)=>{
-        console.log(res);
-        setPosts(res);
-      }).catch(error=>{
-        console.log(error);
-      })
+      const response: any = axios.post(baseURL+"/recruit/search",params,config);
+      console.log(response);
+      setPosts();
     }
   }
 
@@ -58,7 +61,7 @@ const FliterBox = ({setPosts}: any) => {
       <S.FilterBoxInner>
         <form>
           <C.Select id="member" name="member" onChange={memberSelect} >
-            <option value="" >인원</option>
+            <option value="0" >인원</option>
             <option value="5" >5명 이상</option>
             <option value="20">20명 이상</option>
             <option value="50">50명 이상</option>
