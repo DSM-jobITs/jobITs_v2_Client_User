@@ -51,7 +51,7 @@ export const Introduce = styled.div`
   border: 1px solid #D5D5D5;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-  font-size: 0.9375rem;
+  font-size: 0.975rem;
 `
 
 export const ComplexBox = styled.div`
@@ -76,10 +76,17 @@ export const BoxInner = styled.div`
   margin: 10px 0;
 `
 
+export const FileInner = styled.div`
+  display: flex;
+  width: 100%;
+  height: 23px;
+  margin: 10px 0;
+`
+
 export const InnerText = styled.div<active>`
   place-self: center;
   justify-self: start;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   color: ${props => {
     if(props.fixed){
       return "#9B9B9B"
@@ -87,6 +94,28 @@ export const InnerText = styled.div<active>`
       return "#565656"
     }
   }};
+`
+
+export const File = styled.a`
+  place-self: center;
+  justify-self: start;
+  font-size: 0.875rem;
+  color: #9B9B9B;
+  margin-left: 95px;
+  :hover{
+    color: #1234a2;
+  }
+`
+
+export const Back = styled.button`
+  width: 100px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  background: ${props => props.theme.color.sub};
 `
 
 export const MarginDiv = styled.div`

@@ -14,8 +14,46 @@ export const Main = styled.div`
   background: #fff;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
-  :hover{
-    transform: scale(1.01);
+  overflow: hidden;
+
+  /*before style 1*/
+  /* ::before{
+    content:"";
+    position: absolute;
+    bottom: -1200px;
+    left: -65px;
+    width: 1200px;
+    height: 1200px;
+    margin-left: -40px;
+    background: #AEF98E;
+    border-radius: 1000px;
+    opacity: 0.1;
+    transition: bottom ease-out 0.2s;
+  } 
+
+  :hover::before{
+    bottom: -400px;
+  }
+  */
+
+  /*before style 2*/
+  ::before{
+    content:"";
+    position:absolute;
+    width: 2px;
+    height: 2px;
+    left: 50%;
+    background: #fff;
+    opacity: 0.1;
+    border-radius: 600px;
+    transition: all ease-out 0.3s;
+  }
+
+  :hover::before{
+    left: -20px;
+    width: 1200px;
+    height: 1200px;
+    background: #44E14A;
   }
 `
 

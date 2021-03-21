@@ -7,8 +7,9 @@ export const Main = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 120rem;
-  margin-top: 7.5rem;
+  min-height: 400px;
+  margin-top: 5.5rem;
+  overflow: hidden;
 `
 
 export const Text = styled.div`
@@ -34,28 +35,44 @@ export const CheckBox = styled.input`
   margin-right: 0.3125rem;
 `
 
-export const FilterBox = styled.div`
-  position: relative;
-  justify-content: center;
+export const AdminBox = styled.div`
+  display: flex;
+  flex-direction: row-reverse;  
+  align-items: center;
   width: 62.25rem;
-  height: 15.625rem;
-  border: 1px solid #D2D2D2;
-  border-radius: 10px;
-  background: ${props => props.theme.color.background};
+  height: 50px;
+  margin-top: -5px;
+  margin-bottom: 50px;
+  /* background: #ccc; */
+  border-bottom: 2px solid rgba(0,0,0,0.16);
 `
 
-export const FilterBoxInner = styled.div`
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  height: 10.75rem;
-  padding: 32px;
+export const Management = styled.button`
+  width: 95px;
+  height: 33px;
+  margin-left: 10px;
+  background: #FFFFFF;
+  color: #6A5657;
+  border: 1px solid #D7D7D7;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+`
+
+export const Add = styled.button`
+  width: 95px;
+  height: 33px;
+  background: #FFFFFF;
+  color: #6A5657;
+  border: 1px solid #D7D7D7;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
 `
 
 export const FilterWarpper = styled.div`
   display: flex;
+  flex-direction: row;
   position: relative;
   width: 21.875rem;
   height: 50px;
@@ -63,25 +80,9 @@ export const FilterWarpper = styled.div`
   background: #ccc;
 `
 
-export const Search = styled.input`
-  width: 56.75rem;
-  height: 2.4375rem;
-  padding: 0 10px;
-  border: 2px solid #CFCFCF;
-  border-radius: 8px;
-  ::placeholder{
-    color: #CECECE;
-  }
-`
-
-export const FilterText = styled.div`
-  font-size: 0.9375rem;
-`
-
 export const DetailViewWarpper = styled.div`
   position: relative;
   width: 62.25rem;
-  height: 80.0625rem;
+  min-height: 400px;
   margin-top: 130px;
-  /* background: #ccc; */
 `
