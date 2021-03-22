@@ -53,11 +53,7 @@ const FliterBox = ({setPosts}: any) => {
         },
         headers: config.headers
       }).then((res)=>{
-        console.log(res);
         setPosts(res.data.data.list);
-      })
-      .catch((err)=>{
-        console.log(err.message)
       })
     }
   }
