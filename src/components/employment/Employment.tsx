@@ -15,7 +15,6 @@ const Employment = ({history}: any) => {
   const [postsPerPage, setPostPerPage] = useState(6);
 
   useEffect(() => {
-    
     const fetchData = async () => {
       setLoading(true);
       let token: any = localStorage.getItem("token");
@@ -27,7 +26,7 @@ const Employment = ({history}: any) => {
       }
       await axios.get(baseURL+'/recruit/basic',config).then((res)=>{
         setPosts(res.data.data.list);
-        setLoading(false);  
+        setLoading(false);
       }).catch((err)=>{
         alert("로그인 후 이용할 수 있습니다.");
         history.push("/login");
@@ -61,7 +60,10 @@ const Employment = ({history}: any) => {
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
           </S.InputBox> */}
-          <Posts posts={currentPosts(posts)} loading={loading}></Posts>
+          {
+            posts.length === 0?<S.Unexist>해당하는 회사가 없습니다.</S.Unexist>
+            :<Posts posts={currentPosts(posts)} loading={loading}></Posts>
+          }
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
       </S.Main>

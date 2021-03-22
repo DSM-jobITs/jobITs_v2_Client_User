@@ -86,3 +86,8 @@ export const DetailViewWarpper = styled.div`
   min-height: 400px;
   margin-top: 130px;
 `
+
+export const Unexist = styled.span`
+  font-size: 30px;
+  color: #707070;
+`
