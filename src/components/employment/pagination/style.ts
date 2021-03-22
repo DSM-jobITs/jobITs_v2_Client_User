@@ -4,7 +4,7 @@ export const Div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 100px;
 `
 
 export const PageUl = styled.div`
