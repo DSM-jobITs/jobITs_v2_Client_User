@@ -37,10 +37,10 @@ const Password = ({history}:any) => {
   const submit = () => {
     if(checkPassword !== newPassword){
       setIsError(true);
-      setErrorMsg("비밀번호를 확인해주세요.")
+      setErrorMsg("비밀번호가 일치하지 않습니다.");
     } else if(checkPassword == '' || oldPassword == '' || newPassword == ''){
       setIsError(true);
-      setErrorMsg("비밀번호를 확인해주세요.")
+      setErrorMsg("비밀번호를 확인해주세요.");
     } else {
       let pw = {
         newPw: newPassword,
@@ -51,7 +51,14 @@ const Password = ({history}:any) => {
         history.push("/");
       })
       .catch((err)=>{
-        console.log(err.request.status);
+        if(err.request.status === 400){
+          setIsError(true);
+          setErrorMsg("비밀번호 입력형식이 올바르지 않습니다.");
+        }
+        if(err.request.status === 403){
+          setIsError(true);
+          setErrorMsg("비밀번호를 확인해주세요.");
+        }
       })
     }
   }
@@ -60,7 +67,7 @@ const Password = ({history}:any) => {
     <S.Main>
       <S.LoginForm>
         <S.LoginText text="main">PASSWORD</S.LoginText>
-        <S.LoginText text="sub">8 ~ 20자 영어, 숫자, 특수기호</S.LoginText>
+        <S.LoginText text="sub">6 ~ 20자 영어, 숫자, 특수기호</S.LoginText>
         <div>
           <S.Input 
             name="oldPassword"
@@ -74,7 +81,9 @@ const Password = ({history}:any) => {
           <S.Input 
             name="checkPassword"
             type="password" 
-            placeholder="비밀번호" 
+            placeholder="비밀번호"
+            required
+            maxLength={20}
             onChange={onChange}
             value={checkPassword}
           />
@@ -84,6 +93,8 @@ const Password = ({history}:any) => {
             name="newPassword"
             type="password" 
             placeholder="비밀번호 확인" 
+            required
+            maxLength={20}
             onChange={onChange}
             onKeyPress={enter}
             value={newPassword}

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {baseURL} from '../const';
 import * as S from './style'; 
-import { keyframes } from 'styled-components';
 
 const Login = ({history}: any) => {
   const [isError,setIsError] = useState(false);
+  const [errorMsg,setErrorMsg] = useState("wfef");
   const [inputs, setInputs] = useState({
     id: '',
     password: '',
@@ -36,13 +36,22 @@ const Login = ({history}: any) => {
         "password": password
       }
     }).then((res: any)=>{
-      
       localStorage.setItem("token",JSON.stringify(res.data.data.accessToken));
       localStorage.setItem("refresh",JSON.stringify(res.data.data.refreshToken));
       history.push("/");
-    }).catch(error=>{
-      // console.log(error);
-      setIsError(true);
+    }).catch((err)=>{
+      if(err.request.status === 400){
+        setIsError(true);
+        setErrorMsg("입력형식이 올바르지 않습니다.");
+      }
+      if(err.request.status === 403){
+        setIsError(true);
+        setErrorMsg("비밀번호가 틀렸습니다.");
+      }
+      if(err.request.status === 404){
+        setIsError(true);
+        setErrorMsg("존재하지 않는 아이디 입니다.");
+      }
     })
   }
 
@@ -72,7 +81,7 @@ const Login = ({history}: any) => {
             onKeyPress={enter}
           />
         </div>
-        <S.ErrorText error={isError}>아이디 혹은 비밀번호가 틀렸습니다.</S.ErrorText>
+        <S.ErrorText error={isError}>{errorMsg}</S.ErrorText>
         <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
     </S.Main>
