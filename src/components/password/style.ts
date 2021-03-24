@@ -64,7 +64,6 @@ export const Input = styled.input`
 `
 
 export const ErrorText = styled.div<message>`
-  position: absolute;
   visibility: ${props => {
     if(props.error){
       return "visible"

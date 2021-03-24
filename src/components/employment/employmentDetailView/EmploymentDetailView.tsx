@@ -1,95 +1,97 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Header from '../../header/Header';
+import Qualification from './infoBox/Qualification';
+import WorkingConditions from './infoBox/WorkingConditions';
+import EmploymentInfo from './infoBox/EmploymentInfo';
+import Etc from './infoBox/Etc';
+import Wait from './Wait';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import * as S from './style';
+import {baseURL} from '../../const';
 
-const EmploymentDetailView = () => {
+const EmploymentDetailView = ({ history }: any) => {
+  const [datas, setDatas] = useState<any>({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let id = history.location.pathname;
+      id = id.slice(12);
+      let token: any = localStorage.getItem("token");
+      if(token){
+        token = token.replace(/["]+/g, '');
+      }
+      const config = {
+        headers : { Authorization: "Bearer "+token}
+      }
+      await axios.get(baseURL+'/recruit/detail/'+id,config).then((res)=>{
+        setDatas(res.data);
+      }).catch((err)=>{
+        history.push("/");
+      })
+    }
+    fetchData();
+  },[]);
+
   return (
     <div>
       <Header />
+      {datas.qualification===undefined?
+          <Wait />:
       <S.Main>
-        <S.Name>ㅇㅇ회사</S.Name>
-        <S.CompanyNumber>(회사일련번호)</S.CompanyNumber> {/* 회사 일련번호 */}
+        <S.Name>{datas.entName}</S.Name>
+        <S.CompanyNumber>({datas.entNo})</S.CompanyNumber>
         <hr style={{width:"100%",height:"0.2rem",border:"2px double #D5D5D5",margin:"30px"}}/>
-        <S.DeadLine>2021.05.28 까지</S.DeadLine>
+        <S.DeadLine>{datas.deadline} 까지</S.DeadLine>
+
         <S.Introduce>
           <S.Text>기업 소개</S.Text>
           <div>
-            기업에 대한 소개가 들어갑니다.
+            {datas.introduction}
           </div>
         </S.Introduce>
         <S.Introduce>
           <S.Text>업무 내용</S.Text>
           <div>
-            회사에서 하는 업무를 작성합니다.
+            {datas.workContent}
           </div>
         </S.Introduce>
-        <S.ComplexBox>
-          <S.Text>자격 요건</S.Text>
-          <S.BoxInner>
-            <S.InnerText fixed>자격증</S.InnerText><S.InnerText>SQLD</S.InnerText>
-            </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>성적</S.InnerText><S.InnerText>상위 20%</S.InnerText>
-            </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>특기사항</S.InnerText><S.InnerText>파이썬, AI</S.InnerText>
-            </S.BoxInner>
-        </S.ComplexBox>
-        <S.ComplexBox>
-          <S.Text>근무 조건 및 복지</S.Text>
-          <S.BoxInner>
-            <S.InnerText fixed>급여</S.InnerText><S.InnerText>~~원</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>실습 기간</S.InnerText><S.InnerText>O개월</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>식비지원</S.InnerText><S.InnerText>조식 제공, 중식 제공</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>복지</S.InnerText><S.InnerText>4대 보험</S.InnerText>
-          </S.BoxInner>
-        </S.ComplexBox>
-        <S.ComplexBox>
-          <S.Text>기업 정보</S.Text>
-          <S.BoxInner>
-            <S.InnerText fixed>근로자 수</S.InnerText><S.InnerText>52명</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>연락처</S.InnerText><S.InnerText>010 - 0000 - 0000</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>연 매출액</S.InnerText><S.InnerText>~~원</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>주소</S.InnerText><S.InnerText>어디어디~</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>설립 일자</S.InnerText><S.InnerText>2015.05.25</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>근무 일자</S.InnerText><S.InnerText>10 : 00 시 ~ 7 : 00 시</S.InnerText>
-          </S.BoxInner>
-        </S.ComplexBox>
-        <S.ComplexBox>
-          <S.Text>기타</S.Text>
-          <S.BoxInner>
-            <S.InnerText fixed>모집 인원</S.InnerText><S.InnerText>정보보안과 1명</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>실습 후 채용 계획</S.InnerText><S.InnerText>평가 후 일부 채용</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>접수 일자</S.InnerText><S.InnerText>2020.03.03</S.InnerText>
-          </S.BoxInner>
-          <S.BoxInner>
-            <S.InnerText fixed>첨부 파일</S.InnerText><S.InnerText>파일</S.InnerText>
-          </S.BoxInner>
-        </S.ComplexBox>
+          
+          <Qualification 
+            certificate={datas.qualification.certificate}
+            grade={datas.qualification.grade}
+            specialty={datas.qualification.specialty}
+          />
+
+          <WorkingConditions 
+            salary={datas.workingConditions.salary}
+            period={datas.workingConditions.period}
+            meal={datas.workingConditions.meal}
+            welfare={datas.workingConditions.welfare}
+          />
+
+          <EmploymentInfo
+          numOfWorker={datas.entInfo.numOfWorker}
+          entPhone={datas.entInfo.entPhone}
+          entSales={datas.entInfo.entSales}
+          address={datas.entInfo.address}
+          establishmentDate={datas.entInfo.establishmentDate}
+          startTime={datas.entInfo.startTime}
+          endTime={datas.entInfo.endTime}
+          />
+
+          <Etc
+            personnel={datas.other.personnel}
+            recruitPlan={datas.other.recruitPlan}
+            reception={datas.other.reception}
+            file={datas.other.file}
+          />
+        <S.Back onClick={()=>history.push('/employment')}>뒤로가기</S.Back>
         <S.MarginDiv />
       </S.Main>
+      }
     </div>
   );
 };
 
-export default EmploymentDetailView;
+export default withRouter(EmploymentDetailView);

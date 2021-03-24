@@ -1,5 +1,5 @@
 import React from 'react';
-import Employment from "./employment/Employment";
+import HomeEmployment from "./employment/HomeEmployment";
 import * as S from './style';
 
 const Preview = () => {
@@ -15,7 +15,9 @@ const Preview = () => {
           <S.Type active={false} use={false}>취업 현황</S.Type>
         </S.PreviewNav>
         <S.PreviewTemplate>
-          <Employment />
+          <S.Links to="/employment">
+            <HomeEmployment />
+          </S.Links>
           {/* 추후 미리보기엔 공지 사항과 취업 현황이 추가될 예정 */}
         </S.PreviewTemplate>
       </S.Preview>

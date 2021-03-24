@@ -1,39 +1,74 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import Header from '../header/Header';
-import EmploymentItems from './employmentItems/EmploymentItems';
+import FilterBox from './FliterBox';
+import Pagination from './pagination/Pagination';
+import Posts from './pagination/Posts';
+import { baseURL } from '../const';
 import * as S from './style';
 
-const Employment = () => {
+const Employment = ({history}: any) => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(6);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      let token: any = localStorage.getItem("token");
+      if(token){
+        token = token.replace(/["]+/g, '');
+      }
+      const config = {
+        headers : { Authorization: "Bearer "+token}
+      }
+      await axios.get(baseURL+'/recruit/basic',config).then((res)=>{
+        setPosts(res.data.data.list);
+        setLoading(false);
+      }).catch((err)=>{
+        alert("로그인 후 이용할 수 있습니다.");
+        history.push("/login");
+      })
+    }
+    fetchData();
+  },[]);
+
+  const indexOfLast = currentPage * postsPerPage;
+  const indexOfFirst = indexOfLast - postsPerPage;
+  function currentPosts(tmp: any) {
+    let currentPosts = 0;
+    currentPosts = tmp.slice(indexOfFirst, indexOfLast);
+    return currentPosts;
+  }
+
   return (
     <div>
       <Header />
       <S.Main>
-        <S.FilterBox>
-          <S.Text>기업 검색</S.Text>
-          <S.FilterBoxInner>
-            <S.FilterWarpper>
-              <div>이 부분은 필터링을 위한 컴포넌트가 들어갑니다.</div>
-            </S.FilterWarpper>
-            <S.Search type="text" placeholder="기업검색"></S.Search>
-            <S.FilterText>원하시는 검색 조건을 선택(입력)하신 뒤에 결과를 조회해주세요.</S.FilterText>
-          </S.FilterBoxInner>
-        </S.FilterBox>
+        <S.AdminBox>
+          <S.Management>기업 관리</S.Management>
+          <S.Add>기업 추가</S.Add>
+        </S.AdminBox>
+        <FilterBox setPosts={setPosts}/>
         <S.DetailViewWarpper>
-          <S.Text>전체 검색 (5)</S.Text>
-          <S.InputBox>
-            <S.CheckBox type='radio' name="orderBy" value="resently" checked></S.CheckBox>
+          <S.Text>검색 결과 {posts.length}</S.Text>
+          {/* <S.InputBox> 보류 - 두평이가 안만들었어요
+            <S.CheckBox type='radio' name="orderBy" value="resently" defaultChecked></S.CheckBox>
             <span>최신 순</span>
             <S.CheckBox type='radio' name="orderBy" value="deadline"></S.CheckBox>
             <span>마감 순</span>
-          </S.InputBox>
-          <EmploymentItems />
-          <EmploymentItems />
-          <EmploymentItems />
-          <EmploymentItems />
+          </S.InputBox> */}
+          {
+            posts.length === 0?<S.Unexist>해당하는 회사가 없습니다.</S.Unexist>
+            :<Posts posts={currentPosts(posts)} loading={loading}></Posts>
+          }
+        <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={setCurrentPage}></Pagination>
         </S.DetailViewWarpper>
       </S.Main>
     </div>
   );
 };
 
-export default Employment;
+export default withRouter(Employment);

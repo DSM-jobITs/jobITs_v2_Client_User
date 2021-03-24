@@ -14,6 +14,12 @@ export const Main = styled.div`
   height: 87.5vh;
 `
 
+export const Rabbit = styled.img`
+  position: absolute;
+  top: -24%;
+  left: 20px;
+`
+
 export const LoginForm = styled.div`
   display: flex;
   position: relative;
@@ -64,7 +70,6 @@ export const Input = styled.input`
 `
 
 export const ErrorText = styled.div<message>`
-  position: absolute;
   visibility: ${props => {
     if(props.error){
       return "visible"
@@ -72,6 +77,7 @@ export const ErrorText = styled.div<message>`
       return "hidden"
     }
   }};
+  margin-top: 5px;
   color: #ff1f1f;
 `
 

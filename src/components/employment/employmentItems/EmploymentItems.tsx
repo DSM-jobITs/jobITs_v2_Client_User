@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 
-const EmploymentItems = () => {
+const EmploymentItems = ({name,introduce,specialty,deadline}: any) => {
+  const [introduceCut,setIntroduceCut] = useState(introduce);
+  const temp = introduceCut;
+  const stringCutter = 30;
+  introduceCut.length>stringCutter ? setIntroduceCut(temp.slice(0,stringCutter)) : "";
+
   return (
     <S.Main>
-      <S.CompanyName>회사 이름</S.CompanyName>
-      <S.Introduce>간단한 회사 소개</S.Introduce>
+      <S.CompanyName>{name}</S.CompanyName>
+      <S.Introduce>{introduceCut.length==stringCutter?introduceCut+"...":introduceCut}</S.Introduce>
       <hr style={{width:"57.375rem", border:"1px solid #D5D5D5"}}/>
-      <S.Skills>기술 스택을 보여줍니다.</S.Skills>
-      <S.DeadLine>마감 시간을 보여줍니다.</S.DeadLine>
+      <S.Skills>{specialty}</S.Skills>
+      <S.DeadLine>{deadline}</S.DeadLine>
     </S.Main>
   );
 };
