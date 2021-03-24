@@ -31,10 +31,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'AppleSDGothic';
-    src: url(${require('../fonts/AppleSDGothicNeoB.ttf')});
-  }
-  @font-face {
     font-family: 'HangeulNuri-Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
     font-weight: normal;
