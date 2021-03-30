@@ -46,13 +46,13 @@ const EmploymentDetailView = ({ history }: any) => {
 
         <S.Introduce>
           <S.Text>기업 소개</S.Text>
-          <div>
+          <div style={{lineHeight:"25px"}}>
             {datas.introduction}
           </div>
         </S.Introduce>
         <S.Introduce>
           <S.Text>업무 내용</S.Text>
-          <div>
+          <div style={{lineHeight:"25px"}}>
             {datas.workContent}
           </div>
         </S.Introduce>
