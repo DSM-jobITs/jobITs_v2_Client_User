@@ -58,6 +58,17 @@ const FliterBox = ({setPosts}: any) => {
     }
   }
 
+  const resetInput = () => {
+    axios({
+      url: baseURL+"/recruit/basic",
+      method: "GET",
+      headers: config.headers
+    }).then((res)=>{
+      setInputs({entName:"",workContent:"",address:""});
+      setPosts(res.data.data.list);
+    })
+  }
+
   return (
     <S.FilterBox>
       <S.Text>기업 검색</S.Text>
@@ -101,6 +112,7 @@ const FliterBox = ({setPosts}: any) => {
         </div>
         <S.BottomWrapper>
           <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)하신 뒤에 결과를 조회해주세요. </S.FilterText>
+          <S.ResetButton onClick={resetInput}>초기화</S.ResetButton>
           <S.SearchButton onClick={checkInput}>검색하기</S.SearchButton>
         </S.BottomWrapper>
       </S.FilterBoxInner>
