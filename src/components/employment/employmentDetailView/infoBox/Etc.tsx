@@ -3,6 +3,8 @@ import * as S from '../style';
 
 const Etc = ({personnel,recruitPlan,reception,file}:any) => {
 
+  console.log(file);
+
   return (
     <S.ComplexBox>
       <S.Text>기타</S.Text>

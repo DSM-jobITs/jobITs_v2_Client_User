@@ -39,6 +39,7 @@ const Main = () => {
           </S.LinkWarp>
         </S.NavWarp>
       </S.Nav>
+      {/* <S.Line /> */}
       <Preview />
       <Footer />
     </div>
