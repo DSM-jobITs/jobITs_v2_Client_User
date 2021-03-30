@@ -49,7 +49,7 @@ export const ItemsWrapper = styled.div`
     width: 90%;
     height: 60px;
     left: -90%;
-    background: #fff;
+    background: #2bff00;
     opacity: 0.1;
     transition: all ease-out 0.3s;
   }
@@ -58,7 +58,7 @@ export const ItemsWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 60px;
-    background: #44E14A;
+    background: #2bff00;
   }
 `
 
@@ -70,6 +70,7 @@ export const Items = styled.div<name>`
   color: ${props => {
     if(!props.text) return props.theme.color.color
   }};
+
 `
 
 

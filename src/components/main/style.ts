@@ -63,7 +63,9 @@ export const IconText = styled.div`
 `
 
 export const Line = styled.div`
-  width: 80%;
-  height: 20px;
-  background: #aabbcc;
+  width: 1205px;
+  height: 10px;
+  margin: auto;
+  margin-bottom: 100px;
+  background: ${props => props.theme.color.main};
 `
