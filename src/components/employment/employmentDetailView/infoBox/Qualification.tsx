@@ -6,7 +6,7 @@ const Qualification = ({certificate,grade,specialty}: any) => {
   let specialtyStr = specialty;
 
   if(certificateStr !== null){
-    certificateStr = certificate.join('  ');
+    certificateStr = certificate.join(', ');
   }
   // if(specialtyStr !== null){
   //   specialtyStr = specialty.join('  ');

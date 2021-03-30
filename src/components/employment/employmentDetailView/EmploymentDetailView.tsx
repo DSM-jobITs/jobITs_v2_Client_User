@@ -64,6 +64,7 @@ const EmploymentDetailView = ({ history }: any) => {
           />
 
           <WorkingConditions 
+            allowance={datas.workingConditions.allowance}
             salary={datas.workingConditions.salary}
             period={datas.workingConditions.period}
             meal={datas.workingConditions.meal}
