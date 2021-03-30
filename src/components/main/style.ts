@@ -61,3 +61,9 @@ export const IconText = styled.div`
   color: #ffffff;
   text-decoration: none;
 `
+
+export const Line = styled.div`
+  width: 80%;
+  height: 20px;
+  background: #aabbcc;
+`
