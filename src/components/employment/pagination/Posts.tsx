@@ -23,7 +23,7 @@ const Posts = ({posts, loading}: any) => {
               key={post.recruit_id}
               name={post.enterprise_name}
               introduce={post.enterprise_introduce}
-              skills={post.qualification_specialty}
+              specialty={post.qualification_specialty}
               deadline={post.recruit_deadline}
             />
           </Links>

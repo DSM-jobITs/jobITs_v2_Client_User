@@ -65,6 +65,7 @@ const FliterBox = ({setPosts}: any) => {
       headers: config.headers
     }).then((res)=>{
       setInputs({entName:"",workContent:"",address:""});
+      setNumOfWorker(0);
       setPosts(res.data.data.list);
     })
   }
