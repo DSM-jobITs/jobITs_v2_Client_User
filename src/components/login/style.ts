@@ -8,6 +8,7 @@ type message = {
 export const Main = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -16,7 +17,8 @@ export const Main = styled.div`
 
 export const Rabbit = styled.img`
   position: absolute;
-  top: -24%;
+  width: 150px;
+  top: -20.5%;
   left: 20px;
 `
 
@@ -26,6 +28,7 @@ export const LoginForm = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
   width: 52.3125rem;
   height: 42.875rem;
   border: 3px solid ${props => props.theme.color.main};
@@ -92,6 +95,22 @@ export const Submit = styled.button`
   transition: background 0.2s;
   outline: none;
   cursor: pointer;
+  :hover{
+    background: ${props => props.theme.color.sub};
+  }
+`
+
+export const Button = styled.button`
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  background: ${props => props.theme.color.main};
+  transition: background 0.2s;
+  color: white;
+  cursor: pointer;
+
   :hover{
     background: ${props => props.theme.color.sub};
   }

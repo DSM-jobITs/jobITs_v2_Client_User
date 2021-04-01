@@ -13,7 +13,7 @@ const Main = () => {
       <S.Main>
         <S.Img src="/src/assets/images/MainImg.png" alt="메인 이미지" />
       </S.Main>
-      <S.Nav>
+      {/* <S.Nav>
         <S.NavWarp>
           <S.LinkWarp>
             <Link to='/employment' style={{textDecoration:'solid', textAlign: 'center'}}>
@@ -38,7 +38,8 @@ const Main = () => {
             <S.IconText>FAQ</S.IconText>
           </S.LinkWarp>
         </S.NavWarp>
-      </S.Nav>
+      </S.Nav> */}
+      <S.Line />
       <Preview />
       <Footer />
     </div>

@@ -6,11 +6,11 @@ const Qualification = ({certificate,grade,specialty}: any) => {
   let specialtyStr = specialty;
 
   if(certificateStr !== null){
-    certificateStr = certificate.join('  ');
+    certificateStr = certificate.join(', ');
   }
-  if(certificateStr !== null){
-    specialtyStr = certificate.join('  ');
-  }
+  // if(specialtyStr !== null){
+  //   specialtyStr = specialty.join('  ');
+  // }
 
   return (
     <S.ComplexBox>
@@ -19,7 +19,7 @@ const Qualification = ({certificate,grade,specialty}: any) => {
         <S.InnerText fixed>자격증</S.InnerText><S.InnerText>{certificateStr}</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
-        <S.InnerText fixed>성적</S.InnerText><S.InnerText>{grade}</S.InnerText>
+        <S.InnerText fixed>성적</S.InnerText><S.InnerText>{grade}% 이내</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>특기사항</S.InnerText><S.InnerText>{specialtyStr}</S.InnerText>

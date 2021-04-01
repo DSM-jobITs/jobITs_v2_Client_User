@@ -61,3 +61,24 @@ export const IconText = styled.div`
   color: #ffffff;
   text-decoration: none;
 `
+
+export const Line = styled.div`
+  position: relative;
+  width: 1205px;
+  height: 10px;
+  margin: auto;
+  margin-bottom: 100px;
+  background: ${props => props.theme.color.main};
+  overflow: hidden;
+
+  ::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 47%;
+    top: -50px;
+    background: #fff;
+    transform: rotateZ(30deg);
+  }
+`

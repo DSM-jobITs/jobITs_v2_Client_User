@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import {baseURL} from '../const';
 import * as S from './style'; 
 
@@ -84,8 +85,9 @@ const Login = ({history}: any) => {
         <S.ErrorText error={isError}>{errorMsg}</S.ErrorText>
         <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
+      <S.Button onClick={()=>history.push('/')}>메인으로</S.Button>
     </S.Main>
   );
 };
 
-export default Login;
+export default withRouter(Login);

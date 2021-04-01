@@ -54,8 +54,26 @@ export const SearchButton = styled.button`
   font-size: 13px;
   cursor: pointer;
   transition: background 0.2s ease-in-out; 
+  outline: none;
   :hover{
     background: #616161;
+  }
+`
+
+export const ResetButton = styled.button`
+  width: 5.25rem;
+  height: 2.0625rem;
+  margin-right: -15.625rem;
+  border: none;
+  border-radius: 8px;
+  background: #616161;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out; 
+  outline: none;
+  :hover{
+    background: #414141;
   }
 `
 
