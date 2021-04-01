@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from '../style';
 
 const Etc = ({personnel,recruitPlan,reception,file}:any) => {
-
   return (
     <S.ComplexBox>
       <S.Text>기타</S.Text>

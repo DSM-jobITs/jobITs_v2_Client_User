@@ -31,7 +31,7 @@ const WorkingConditions = ({salary,allowance,period,meal,welfare}:any) => {
         <S.InnerText>
           { welfare.fourMajor ? "4대 보험," : " " }
           { welfare.selfDevelop ? "자기 개발비," : " " }
-          { welfare.laptop ? "노트북 지급" : " " }
+          { welfare.laptop ? "노트북 지급," : " " }
           { welfare.etc }
         </S.InnerText>
       </S.BoxInner>
