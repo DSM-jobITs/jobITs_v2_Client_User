@@ -7,27 +7,29 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     margin-top: 1.875rem; /* 헤더로 겹치는 부분만큼 margin */
+    overflow-x: hidden;
     font-family: 'InfinitySans-RegularA1', 'sans-serif';
-    &::-webkit-scrollbar {
+    
+  }
+
+  body {
+    ::-webkit-scrollbar {
       width: 10px;
+      background: none;
     }
-    &::-webkit-scrollbar-track {
-      border-radius: 5px;
-      background-color: rgba(0,0,0,0);
+    ::-webkit-scrollbar-track{
+      background: none;
     }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 5px;
-      background-color: #006004;
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(97, 97, 97,0.4);
     }
-    &::-webkit-scrollbar-button {
+    ::-webkit-scrollbar-button {
       width: 0;
       height: 0;
     }
-  }
-
-  * {
-    box-sizing: bordeer-box;
   }
 
   @font-face {
