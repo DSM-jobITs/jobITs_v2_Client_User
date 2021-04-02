@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Main from './components/main/Main';
+import MainContainer from './containers/MainContainer';
 import LoginContainer from './containers/LoginContainer';
 import PasswordContainer from './containers/PasswordContainer';
 import Employment from './components/employment/Employment';
@@ -12,7 +12,7 @@ const Routing = () => {
   return (
     <div>
       <Switch>
-        <Route exact path='/' component={Main} />
+        <Route exact path='/' component={MainContainer} />
         <Route path='/login' component={LoginContainer} />
         <Route path='/password' component={PasswordContainer} />
         <Route path='/employment/:id' component={EmploymentDetailView}/>
