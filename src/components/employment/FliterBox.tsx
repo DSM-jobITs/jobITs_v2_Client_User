@@ -12,6 +12,7 @@ const FliterBox = ({setPosts}: any) => {
   });
   const [numOfWorker,setNumOfWorker] = useState<any>(0);
   const { entName, workContent, address } = inputs;
+
   const onChange = (e: any) => {
     const { name, value } = e.target;
     const nextInputs = {
@@ -40,7 +41,6 @@ const FliterBox = ({setPosts}: any) => {
       && (((inputs.entName.length > 1) || (inputs.entName == ''))
       && ((inputs.workContent.length > 1) || (inputs.workContent == ''))
       && ((inputs.address.length > 1) || (inputs.address == '')))) {
-
       /*axios로 필터링된 데이터 요청하기*/
       axios({
         url: baseURL+"/recruit/search",
@@ -70,6 +70,12 @@ const FliterBox = ({setPosts}: any) => {
     })
   }
 
+  const enter = (e: any) => {
+    if(e.key == "Enter"){
+      checkInput();
+    }
+  }
+
   return (
     <S.FilterBox>
       <S.Text>기업 검색</S.Text>
@@ -91,6 +97,7 @@ const FliterBox = ({setPosts}: any) => {
             onChange={onChange}
             value={entName}
             minLength={2}
+            onKeyPress={enter}
           />
           <S.Search 
             name="workContent"
@@ -100,6 +107,7 @@ const FliterBox = ({setPosts}: any) => {
             onChange={onChange}
             value={workContent}
             minLength={2}
+            onKeyPress={enter}
           />
           <S.Search 
             name="address"
@@ -109,10 +117,11 @@ const FliterBox = ({setPosts}: any) => {
             onChange={onChange}
             value={address}
             minLength={2}
+            onKeyPress={enter}
           />
         </div>
         <S.BottomWrapper>
-          <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)하신 뒤에 결과를 조회해주세요. </S.FilterText>
+          <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)한 후 결과를 조회해주세요. </S.FilterText>
           <S.ResetButton onClick={resetInput}>초기화</S.ResetButton>
           <S.SearchButton onClick={checkInput}>검색하기</S.SearchButton>
         </S.BottomWrapper>
