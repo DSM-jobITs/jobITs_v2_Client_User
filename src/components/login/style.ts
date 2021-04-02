@@ -17,7 +17,7 @@ export const Main = styled.div`
 
 export const Rabbit = styled.img`
   position: absolute;
-  width: 150px;
+  width: 50px;
   top: -20.5%;
   left: 20px;
 `
@@ -38,7 +38,7 @@ export const LoginForm = styled.div`
 `
 
 export const LoginText = styled.p<message>`
-  margin: 5px;
+  margin: 0.3125rem;
   font-size: 3.3125rem;
   font-size: ${props => {
     if(props.text === "main"){ // mainText 일 때 font-size
@@ -62,13 +62,13 @@ export const Input = styled.input`
   position: relative;
   width: 36.3125rem;
   height: 4.875rem;
-  margin-top: 20px;
-  padding: 0 20px;
-  border: 3px solid ${props => props.theme.color.color};
+  margin-top: 1.25rem;
+  padding: 0 1.25rem;
+  border: 0.1875rem solid ${props => props.theme.color.color};
   font-size: 1.5625rem;
   :focus{
     outline: none;
-    border: 3px solid ${props => props.theme.color.main};
+    border: 0.1875rem solid ${props => props.theme.color.main};
   }
 `
 
@@ -80,7 +80,7 @@ export const ErrorText = styled.div<message>`
       return "hidden"
     }
   }};
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   color: #ff1f1f;
 `
 
@@ -101,9 +101,9 @@ export const Submit = styled.button`
 `
 
 export const Button = styled.button`
-  width: 100px;
-  height: 50px;
-  margin-top: 20px;
+  width: 6.25rem;
+  height: 3.125rem;
+  margin-top: 1.25rem;
   outline: none;
   border: none;
   background: ${props => props.theme.color.main};
