@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type error = {
+  error: boolean;
+}
+
 export const FilterBox = styled.div`
   position: relative;
   justify-content: center;
@@ -33,10 +37,24 @@ export const Search = styled.input`
 `
 
 export const BottomWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* margin-top: 30px; */
+`
+
+export const SearchAlert = styled.div<error>`
+  visibility: ${props =>  {
+    if(props.error) return "visible"
+    else return "hidden"
+  }};
+  width: 200px;
+  height: 20px;
+  left: 0;
+  top: -75%;
+  position: absolute;
+  color: red;
+  font-size: 13px;
 `
 
 export const FilterText = styled.div`

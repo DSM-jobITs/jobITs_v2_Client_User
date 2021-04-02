@@ -11,6 +11,8 @@ const FliterBox = ({setPosts}: any) => {
     address: '',
   });
   const [numOfWorker,setNumOfWorker] = useState<any>(0);
+  const [errorText, setErrorEext] = useState(false);
+
   const { entName, workContent, address } = inputs;
 
   const onChange = (e: any) => {
@@ -41,6 +43,7 @@ const FliterBox = ({setPosts}: any) => {
       && (((inputs.entName.length > 1) || (inputs.entName == ''))
       && ((inputs.workContent.length > 1) || (inputs.workContent == ''))
       && ((inputs.address.length > 1) || (inputs.address == '')))) {
+      setErrorEext(false);
       /*axios로 필터링된 데이터 요청하기*/
       axios({
         url: baseURL+"/recruit/search",
@@ -55,6 +58,8 @@ const FliterBox = ({setPosts}: any) => {
       }).then((res)=>{
         setPosts(res.data.data.list);
       })
+    } else {
+      setErrorEext(true);
     }
   }
 
@@ -124,6 +129,7 @@ const FliterBox = ({setPosts}: any) => {
           <S.FilterText>원하시는 검색 조건을 선택(2글자 이상 입력)한 후 결과를 조회해주세요. </S.FilterText>
           <S.ResetButton onClick={resetInput}>초기화</S.ResetButton>
           <S.SearchButton onClick={checkInput}>검색하기</S.SearchButton>
+          <S.SearchAlert error={errorText}>2글자 이상 입력해주세요.</S.SearchAlert>
         </S.BottomWrapper>
       </S.FilterBoxInner>
     </S.FilterBox>
