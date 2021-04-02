@@ -4,7 +4,7 @@ import * as S from './style';
 const EmploymentItems = ({name,introduce,specialty,deadline}: any) => {
   const [introduceCut,setIntroduceCut] = useState(introduce);
   const temp = introduceCut;
-  const stringCutter = 85; // 85자 이상은 안보여줌
+  const stringCutter = 100; // 100자 이상은 안보여줌
   introduceCut.length>stringCutter ? setIntroduceCut(temp.slice(0,stringCutter)) : "";
 
   return (

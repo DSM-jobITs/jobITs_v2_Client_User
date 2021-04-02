@@ -47,10 +47,10 @@ const Employment = ({history}: any) => {
     <div>
       <Header />
       <S.Main>
-        <S.AdminBox>
+        {/* <S.AdminBox>
           <S.Management>기업 관리</S.Management>
           <S.Add>기업 추가</S.Add>
-        </S.AdminBox>
+        </S.AdminBox> */}
         <FilterBox setPosts={setPosts}/>
         <S.DetailViewWarpper>
           <S.Text>검색 결과 {posts.length}</S.Text>
