@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './style'; 
 
 const Login = ({inputs, keyPress, submit, change, error, errorText, pushMain}:any) => {
-
   const {id, password} = inputs;
 
   return (
