@@ -108,14 +108,18 @@ export const File = styled.a`
 `
 
 export const Back = styled.button`
-  width: 6.25rem;
-  height: 3.125rem;
+  position: fixed;
+  width: 5.8rem;
+  height: 2.125rem;
+  top: 7%;
+  left: 2%;
   border: none;
   color: #fff;
-  border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
   background: ${props => props.theme.color.sub};
+  opacity: 0.7;
+  clip-path: polygon(100% 0%, 100% 48%, 100% 100%, 13% 100%, 0% 50%, 13% 0);
 `
 
 export const MarginDiv = styled.div`
