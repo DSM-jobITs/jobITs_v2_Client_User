@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
-import {baseURL} from '../const';
+import {baseURL} from '../../const';
 import { Link, withRouter } from 'react-router-dom';
 import {logo} from '../../assets/images/index';
 import * as S from './style';

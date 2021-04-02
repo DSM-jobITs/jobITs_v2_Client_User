@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as P from '../globalPreviewStlye';
 import ItemsWrapper from './ItemsWrapper';
 import axios from 'axios';
-import {baseURL} from '../../const';
+import {baseURL} from '../../../const';
 
 const HomeEmployment = () => {
   const [datas,setDatas] = useState<any>([]);
@@ -34,6 +34,7 @@ const HomeEmployment = () => {
             recruitNum={d.recruit_no}
             entName={d.enterprise_name}
             reception={d.recruit_reception}
+            recruitId={d.recruit_id}
           />
         ))
       }

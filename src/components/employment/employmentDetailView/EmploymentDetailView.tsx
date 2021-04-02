@@ -8,7 +8,7 @@ import Wait from './Wait';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import * as S from './style';
-import {baseURL} from '../../const';
+import {baseURL} from '../../../const';
 
 const EmploymentDetailView = ({ history }: any) => {
   const [datas, setDatas] = useState<any>({});

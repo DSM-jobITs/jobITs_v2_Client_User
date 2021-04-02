@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {baseURL} from '../const';
+import {baseURL} from '../../const';
 import * as S from './filterStyle';
 import * as C from './comboBoxStyle';
 
@@ -102,7 +102,7 @@ const FliterBox = ({setPosts}: any) => {
           <S.Search 
             name="workContent"
             type="text" 
-            placeholder="업무내용" 
+            placeholder="특기사항" 
             style={{marginLeft:21}} 
             onChange={onChange}
             value={workContent}

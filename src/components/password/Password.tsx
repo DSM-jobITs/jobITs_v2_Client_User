@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 import axios from 'axios';
 import * as S from './style';
-import { baseURL } from '../const';
+import { baseURL } from '../../const';
 
 const Password = ({history}:any) => {
   const [isError,setIsError] = useState(false);

@@ -5,7 +5,7 @@ import Header from '../header/Header';
 import FilterBox from './FliterBox';
 import Pagination from './pagination/Pagination';
 import Posts from './pagination/Posts';
-import { baseURL } from '../const';
+import { baseURL } from '../../const';
 import * as S from './style';
 
 const Employment = ({history}: any) => {
@@ -42,6 +42,7 @@ const Employment = ({history}: any) => {
     currentPosts = tmp.slice(indexOfFirst, indexOfLast);
     return currentPosts;
   }
+
 
   return (
     <div>
