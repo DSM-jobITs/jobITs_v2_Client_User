@@ -1,66 +1,13 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import {baseURL} from '../../const';
-import {rabbit} from '../../assets/images/index';
+import React from 'react';
 import * as S from './style'; 
 
-const Login = ({history}: any) => {
-  const [isError,setIsError] = useState(false);
-  const [errorMsg,setErrorMsg] = useState("wfef");
-  const [inputs, setInputs] = useState({
-    id: '',
-    password: '',
-  })
+const Login = ({inputs, keyPress, submit, change, error, errorText, pushMain}:any) => {
 
   const {id, password} = inputs;
-  const onChange = (e: any) => {
-    const { name, value } = e.target;
-    const nextInputs = {
-      ...inputs,
-      [name]: value,
-    }
-    setInputs(nextInputs);
-  }
-
-  const enter = (e: any) => {
-    if(e.key == "Enter"){
-      submit();
-    }
-  }
-
-  const submit = () => {
-    axios({
-      method:"POST",
-      url: baseURL+'/signin/basic',
-      data:{
-        "id": id,
-        "password": password
-      }
-    }).then((res: any)=>{
-      localStorage.setItem("token",JSON.stringify(res.data.data.accessToken));
-      localStorage.setItem("refresh",JSON.stringify(res.data.data.refreshToken));
-      history.push("/");
-    }).catch((err)=>{
-      if(err.request.status === 400){
-        setIsError(true);
-        setErrorMsg("입력형식이 올바르지 않습니다.");
-      }
-      if(err.request.status === 403){
-        setIsError(true);
-        setErrorMsg("비밀번호가 틀렸습니다.");
-      }
-      if(err.request.status === 404){
-        setIsError(true);
-        setErrorMsg("존재하지 않는 아이디 입니다.");
-      }
-    })
-  }
 
   return (
     <S.Main>
       <S.LoginForm>
-        {/* <S.Rabbit src={rabbit} alt="rabbit" /> */}
         <S.LoginText text="main">LOGIN</S.LoginText>
         <S.LoginText text="welcome">Welcome to jobITs</S.LoginText>
         <S.LoginText text="sub">로그인하여 다양한 기업정보를 확인해보세요.</S.LoginText>
@@ -69,7 +16,7 @@ const Login = ({history}: any) => {
             name="id"
             type="id" 
             placeholder="id"
-            onChange={onChange}
+            onChange={change}
             value={id}
           />
         </div>
@@ -78,17 +25,17 @@ const Login = ({history}: any) => {
             name="password"
             type="password"
             placeholder="password"
-            onChange={onChange}
+            onChange={change}
             value={password}
-            onKeyPress={enter}
+            onKeyPress={keyPress}
           />
         </div>
-        <S.ErrorText error={isError}>{errorMsg}</S.ErrorText>
+        <S.ErrorText error={error}>{errorText}</S.ErrorText>
         <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
-      <S.Button onClick={()=>history.push('/')}>메인으로</S.Button>
+      <S.Button onClick={pushMain}>메인으로</S.Button>
     </S.Main>
   );
 };
 
-export default withRouter(Login);
+export default Login;
