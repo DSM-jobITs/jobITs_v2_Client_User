@@ -1,0 +1,12 @@
+// export { default as companyIcon } from './Icon_Company.png';
+// export { default as employmentIcon } from './Icon_Employment.png';
+// export { default as FAQIcon } from './Icon_FAQ.png';
+// export { default as interviewIcon} from './Icon_Interview.png';
+// export { default as noticeIcon } from './Icon_Notice.png';
+export { default as githubIcon } from './iconGithub.png';
+export { default as footerLogo } from './Logo_Footer.png';
+export { default as logo } from './Logo.png';
+export { default as mainImg } from './MainImg.png';
+export { default as notFound } from './NotFound.png';
+export { default as preview } from './Preview.png';
+export { default as rabbit } from './Rabbit.png';

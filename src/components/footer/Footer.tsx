@@ -1,5 +1,7 @@
 import React from 'react';
 import * as S from './style';
+import {footerLogo} from '../../assets/images/index';
+import { githubIcon } from '../../assets/images/index';
 
 const Footer = () => {
   return (
@@ -28,8 +30,8 @@ const Footer = () => {
         </S.DevelopWrap>
         <hr style={{width:"100%",border:"solid 1px #707070"}}/>
         <S.Information>
-          <S.Logo src="/src/assets/images/Logo_Footer.png" />
-          <a href="https://github.com/DSM-jobITs" target="_blank"><S.Icon src='src/assets/images/iconGithub.png'/></a>
+          <S.Logo src={footerLogo} />
+          <a href="https://github.com/DSM-jobITs" target="_blank"><S.Icon src={githubIcon}/></a>
         </S.Information>
       </S.Inner>
     </S.Main>

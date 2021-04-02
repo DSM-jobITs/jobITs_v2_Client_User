@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Preview from '../preview/Preview';
 import Header from '../header/Header';
 import Footer from "../footer/Footer";
-import {hello} from "../../scripts/alert";
+import { mainImg } from '../../assets/images/index';
 import * as S from './style';
 
 const Main = () => {
@@ -11,7 +10,7 @@ const Main = () => {
     <div>
       <Header />
       <S.Main>
-        <S.Img src="/src/assets/images/MainImg.png" alt="메인 이미지" />
+        <S.Img src={mainImg} alt="메인 이미지" />
       </S.Main>
       {/* <S.Nav>
         <S.NavWarp>

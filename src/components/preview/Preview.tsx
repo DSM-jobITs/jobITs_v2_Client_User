@@ -1,13 +1,14 @@
 import React from 'react';
 import HomeEmployment from "./employment/HomeEmployment";
 import * as S from './style';
+import {preview} from '../../assets/images/index';
 
 const Preview = () => {
 
   return (
     <div>
       <S.Preview>
-        <S.NoticeImg src="/src/assets/images/Preview.png" alt="notice 소개 글" />
+        <S.NoticeImg src={preview} alt="notice 소개 글" />
         <S.PreviewNav>
           <S.Type active>채용 의뢰</S.Type>
           <S.Type active={false} use={false}>전체 공지</S.Type>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import {baseURL} from '../const';
+import {rabbit} from '../../assets/images/index';
 import * as S from './style'; 
 
 const Login = ({history}: any) => {
@@ -59,7 +60,7 @@ const Login = ({history}: any) => {
   return (
     <S.Main>
       <S.LoginForm>
-        <S.Rabbit src='/src/assets/images/Rabbit.png' alt="rabbit" />
+        <S.Rabbit src={rabbit} alt="rabbit" />
         <S.LoginText text="main">LOGIN</S.LoginText>
         <S.LoginText text="welcome">Welcome to jobITs</S.LoginText>
         <S.LoginText text="sub">로그인하여 다양한 기업정보를 확인해보세요.</S.LoginText>

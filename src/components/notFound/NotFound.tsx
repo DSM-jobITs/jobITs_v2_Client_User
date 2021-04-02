@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import * as S from './style';
+import {notFound} from '../../assets/images/index';
 
 const NotFound = ({history}: any) => {
 
@@ -10,7 +11,7 @@ const NotFound = ({history}: any) => {
 
   return (
     <S.Main>
-      <S.NotFound src="/src/assets/images/NotFound.png" />
+      <S.NotFound src={notFound} />
       <S.Text type='en'>Oops!</S.Text>
       <S.Text type='kr'>요청하신 페이지를 찾을 수 없습니다.</S.Text>
       <S.ButtonWarpper>

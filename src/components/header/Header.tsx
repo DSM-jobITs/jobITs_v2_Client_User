@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import {baseURL} from '../const';
 import { Link, withRouter } from 'react-router-dom';
+import {logo} from '../../assets/images/index';
 import * as S from './style';
 
 const Header = ({history}: any) => {
@@ -44,7 +45,7 @@ const Header = ({history}: any) => {
       <S.Main>
         <S.Inner>
           <Link to="/">
-            <S.Logo src="/src/assets/images/Logo.png" alt="로고"/>
+            <S.Logo src={logo} alt="로고"/>
           </Link>
           <S.NavWarp>
             <S.NavItem to='/employment' activeStyle={activeStyle}>채용의뢰</S.NavItem>
