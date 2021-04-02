@@ -56,7 +56,7 @@ export const NavItem = styled(NavLink)`
     position: absolute;
     left:0;
     width: 0px;
-    height: 3px;
+    height: 0.1875rem;
     margin-top: 3.65rem;
     transition: all 0.2s ease-in-out;
     transition-duration: 0.3s;
@@ -148,7 +148,7 @@ export const UserBox = styled.div<show>`
     content: '';
     position: absolute;
     width: 6.525rem;
-    height: 1px;
+    height: 0.0625rem;
     margin-left: 0.5rem;
     background: #ECECEC;
   }

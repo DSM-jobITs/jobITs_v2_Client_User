@@ -20,8 +20,8 @@ export const Main = styled.div`
   ::before{
     content:"";
     position:absolute;
-    width: 2px;
-    height: 2px;
+    width: 0.125rem;
+    height: 0.125rem;
     left: 50%;
     background: #fff;
     opacity: 0.1;
@@ -31,8 +31,8 @@ export const Main = styled.div`
 
   :hover::before{
     left: -20px;
-    width: 1200px;
-    height: 1200px;
+    width: 75rem;
+    height: 75rem;
     background: #44E14A;
   }
 `

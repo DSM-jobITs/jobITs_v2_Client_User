@@ -53,8 +53,8 @@ export const Input = styled.input`
   position: relative;
   width: 30.3125rem;
   height: 3.875rem;
-  margin-top: 20px;
-  padding: 0 20px;
+  margin-top: 1.25rem;
+  padding: 0 1.25rem;
   border: 3px solid ${props => props.theme.color.color};
   font-size: 1.5625rem;
   :focus{

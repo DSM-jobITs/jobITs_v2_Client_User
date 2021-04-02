@@ -4,7 +4,7 @@ export const Div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 6.25rem;
 `
 
 export const PageUl = styled.div`
@@ -20,8 +20,8 @@ export const PageLi = styled.button`
   font-size:14px;
   padding:5px;
   border: 1px solid #B7B7B8;
-  width:40px;
-  height: 30px;
+  width:2.5rem;
+  height: 1.875rem;
   cursor:pointer;
   background: #fff;
   :focus{

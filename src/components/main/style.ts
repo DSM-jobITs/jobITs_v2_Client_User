@@ -64,18 +64,18 @@ export const IconText = styled.div`
 
 export const Line = styled.div`
   position: relative;
-  width: 1205px;
+  width: 75.3125rem;
   height: 10px;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
   background: ${props => props.theme.color.main};
   overflow: hidden;
 
   ::before{
     content: "";
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
     left: 47%;
     top: -50px;
     background: #fff;

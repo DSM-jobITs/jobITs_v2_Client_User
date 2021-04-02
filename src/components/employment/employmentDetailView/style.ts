@@ -19,7 +19,7 @@ export const Main = styled.div`
 export const Name = styled.div`
   position: positive;
   font-size: 1.75rem;
-  margin-top: 70px;
+  margin-top: 4.375rem;
   color: #565656;
 `
 
@@ -35,7 +35,7 @@ export const DeadLine = styled.div`
 
 export const Text = styled.div`
   position: absolute;
-  margin-top: -50px;
+  margin-top: -3.125rem;
   left: 0;
   font-size: 1.0625rem;
   color: #414141;
@@ -46,7 +46,7 @@ export const Introduce = styled.div`
   position: relative;
   width: 69rem;
   min-height: 9.0625rem;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   padding: 1.25rem;
   border: 1px solid #D5D5D5;
   border-radius: 5px;
@@ -60,7 +60,7 @@ export const ComplexBox = styled.div`
   flex-direction: column;
   width: 69rem;
   min-height: 7.375rem;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   padding: 1.25rem;
   border: 1px solid #D5D5D5;
   border-radius: 5px;
@@ -72,14 +72,14 @@ export const BoxInner = styled.div`
   display: grid;
   grid-template-columns: 2fr 12fr;
   width: 100%;
-  height: 23px;
+  height: 1.4375rem;
   margin: 10px 0;
 `
 
 export const FileInner = styled.div`
   display: flex;
   width: 100%;
-  height: 23px;
+  height: 1.4375rem;
   margin: 10px 0;
 `
 
@@ -108,8 +108,8 @@ export const File = styled.a`
 `
 
 export const Back = styled.button`
-  width: 100px;
-  height: 50px;
+  width: 6.25rem;
+  height: 3.125rem;
   border: none;
   color: #fff;
   border-radius: 5px;
