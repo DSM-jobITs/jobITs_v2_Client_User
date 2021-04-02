@@ -11,7 +11,7 @@ const Etc = ({personnel,recruitPlan,reception,file}:any) => {
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>실습 후 채용 계획</S.InnerText>
-        <S.InnerText>{ recruitPlan ? "있음" : "없음" }</S.InnerText>
+        <S.InnerText>{ recruitPlan ? "결격 사유 없을 시 전원 채용" : "평가 후 일부 채용" }</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>접수 일자</S.InnerText>
