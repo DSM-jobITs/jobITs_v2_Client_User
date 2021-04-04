@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style'; 
 
-const Login = ({inputs, keyPress, submit, change, error, errorText, pushMain}:any) => {
+const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, pushMain}:any) => {
   const {id, password} = inputs;
 
   return (
@@ -35,6 +35,6 @@ const Login = ({inputs, keyPress, submit, change, error, errorText, pushMain}:an
       <S.Button onClick={pushMain}>메인으로</S.Button>
     </S.Main>
   );
-};
+});
 
 export default Login;
