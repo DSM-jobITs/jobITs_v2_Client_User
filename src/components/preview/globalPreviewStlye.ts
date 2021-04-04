@@ -41,7 +41,7 @@ export const ItemsWrapper = styled.div`
   cursor: pointer;
   overflow: hidden;
   :nth-child(even){
-    background: #EAFFE0;
+    background: #e8ffe3;
   }
   ::before{
     content:"";
