@@ -15,7 +15,7 @@ const EmploymentInfo = ({numOfWorker,entPhone,entSales,address,establishmentDate
         <S.InnerText fixed>연락처</S.InnerText><S.InnerText>{ entPhone }</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
-        <S.InnerText fixed>연 매출액</S.InnerText><S.InnerText>{ entSales }(억)</S.InnerText>
+        <S.InnerText fixed>연 매출액</S.InnerText><S.InnerText>{ entSales }억</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>주소</S.InnerText><S.InnerText>{ address }</S.InnerText>

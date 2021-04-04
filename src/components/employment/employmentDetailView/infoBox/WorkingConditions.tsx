@@ -33,7 +33,11 @@ const WorkingConditions = ({salary,allowance,period,meal,welfare}:any) => {
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>채용 후 연봉</S.InnerText>
-        <S.InnerText>{CommaAdder(salaryWithComma)} 원</S.InnerText>
+        {/* <S.InnerText>{CommaAdder(salaryWithComma)} 원</S.InnerText> */}
+        {salary ? 
+        <S.InnerText>{CommaAdder(salaryWithComma)} 원</S.InnerText> :
+        <S.InnerText>공개 안함</S.InnerText> 
+      }
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>실습 기간</S.InnerText>
