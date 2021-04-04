@@ -4,12 +4,9 @@ import {useHistory} from 'react-router-dom';
 
 const ItemsWrapper = ({recruitNum,entName,reception,recruitId}: any) => {
   let history = useHistory();
-  const pushEmployment = () => {
-    history.push("employment/"+recruitId);
-  } 
 
   return (
-    <P.ItemsWrapper onClick={pushEmployment}>
+    <P.ItemsWrapper onClick={()=>history.push('employment/'+recruitId)}>
       <P.Items>{recruitNum}</P.Items>
       <P.Items text>{entName}</P.Items>
       <P.Items>{reception}</P.Items>
