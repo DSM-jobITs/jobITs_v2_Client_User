@@ -24,12 +24,11 @@ const Header = ({history}: any) => {
         setIsLogin(true);
       }
     }
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 160);
     fetchData();
   },[])
-
-  setTimeout(() => {
-    setIsVisible(true);
-  }, 150);
 
   const activeStyle = {
     color: "#006004"
