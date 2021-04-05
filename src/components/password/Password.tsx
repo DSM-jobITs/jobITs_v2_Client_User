@@ -9,16 +9,17 @@ const Password = ({inputs, change, keyPress, submit, error, errorText}:any) => {
       <S.LoginForm>
         <S.LoginText text="main">PASSWORD</S.LoginText>
         <S.LoginText text="sub">6 ~ 20자 영어, 숫자, 특수기호</S.LoginText>
-        <div>
+        <form>
           <S.Input 
             name="oldPassword"
             type="password" 
             placeholder="현재 비밀번호"
             onChange={change}
             value={oldPassword}
+            autoComplete="on"
           />
-        </div>
-        <div>
+        </form>
+        <form>
           <S.Input 
             name="checkPassword"
             type="password" 
@@ -27,9 +28,10 @@ const Password = ({inputs, change, keyPress, submit, error, errorText}:any) => {
             maxLength={20}
             onChange={change}
             value={checkPassword}
+            autoComplete="on"
           />
-        </div>
-        <div>
+        </form>
+        <form>
           <S.Input 
             name="newPassword"
             type="password" 
@@ -39,8 +41,9 @@ const Password = ({inputs, change, keyPress, submit, error, errorText}:any) => {
             onChange={change}
             onKeyPress={keyPress}
             value={newPassword}
+            autoComplete="on"
           />
-        </div>
+        </form>
         <S.Submit onClick={submit}>비밀번호 변경</S.Submit>
         <S.ErrorText error={error}>{errorText}</S.ErrorText>
       </S.LoginForm>

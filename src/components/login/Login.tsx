@@ -19,7 +19,7 @@ const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, p
             value={id}
           />
         </div>
-        <div>
+        <form>
           <S.Input
             name="password"
             type="password"
@@ -27,8 +27,9 @@ const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, p
             onChange={change}
             value={password}
             onKeyPress={keyPress}
+            autoComplete="on"
           />
-        </div>
+        </form>
         <S.ErrorText error={error}>{errorText}</S.ErrorText>
         <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
