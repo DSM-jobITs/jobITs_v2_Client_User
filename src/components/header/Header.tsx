@@ -9,6 +9,7 @@ const Header = ({history}: any) => {
   const [isShow,setIsShow] = useState(false);
   const [name,setName] = useState("");
   const [isLogin,setIsLogin] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(()=>{
     const fetchData = async () =>{
@@ -25,6 +26,10 @@ const Header = ({history}: any) => {
     }
     fetchData();
   },[])
+
+  setTimeout(() => {
+    setIsVisible(true);
+  }, 150);
 
   const activeStyle = {
     color: "#006004"
@@ -53,16 +58,20 @@ const Header = ({history}: any) => {
             <S.NavItem to='/warning' activeStyle={activeStyle}>면접</S.NavItem>
             <S.NavItem to='/warning' activeStyle={activeStyle}>기업</S.NavItem>
             <S.NavItem to='/warning' activeStyle={activeStyle}>FAQ</S.NavItem> */}
+            <S.Visible show={isVisible}>
             {isLogin ? 
               <S.User onClick={showUserBox}>
                 {name} 님
                 <S.UserBox show={isShow}>
-                  <Link style={{margin:"auto",marginTop:"25px",textDecoration:"none"}} to="/password"><S.UserBoxItems>비밀번호 변경</S.UserBoxItems></Link>
+                  <Link style={{margin:"auto",marginTop:"25px",textDecoration:"none"}} to="/password">
+                    <S.UserBoxItems>비밀번호 변경</S.UserBoxItems>
+                  </Link>
                   <S.UserBoxItems onClick={logout}>로그아웃</S.UserBoxItems>
                 </S.UserBox>
               </S.User> :
               <S.Login to="/login" as={Link}>LOGIN</S.Login>
             }
+            </S.Visible>
           </S.NavWarp>
         </S.Inner>
       </S.Main>

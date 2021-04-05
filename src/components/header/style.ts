@@ -82,7 +82,7 @@ export const Login = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4.875rem;
+  width: 5.34rem;
   height: 2.00rem;
   margin-left: 60px;
   border: solid 2px #3A801D;
@@ -167,4 +167,8 @@ export const UserBoxItems = styled.div`
   :hover{
     background:${props => props.theme.color.background};
   }
+`
+
+export const Visible = styled.div<show>`
+  visibility: ${props => props.show?"visible":"hidden"};
 `
