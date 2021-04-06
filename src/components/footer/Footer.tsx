@@ -31,7 +31,6 @@ const Footer = () => {
         <hr style={{width:"100%",border:"solid 1px #707070"}}/>
         <S.Information>
           <S.Logo src={footerLogo} />
-          <a href="https://github.com/DSM-jobITs" target="_blank"><S.Icon src={githubIcon}/></a>
         </S.Information>
       </S.Inner>
     </S.Main>
