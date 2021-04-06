@@ -6,7 +6,7 @@ const ItemsWrapper = ({recruitNum,entName,reception,recruitId}: any) => {
   let history = useHistory();
 
   return (
-    <P.ItemsWrapper onClick={()=>history.push('employment/'+recruitId)}>
+    <P.ItemsWrapper onClick={()=>history.push('recruit/'+recruitId)}>
       <P.Items>{recruitNum}</P.Items>
       <P.Items text>{entName}</P.Items>
       <P.Items>{reception}</P.Items>

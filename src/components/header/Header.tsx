@@ -52,7 +52,7 @@ const Header = ({history}: any) => {
             <S.Logo src={logo} alt="로고"/>
           </Link>
           <S.NavWarp>
-            <S.NavItem to='/employment' activeStyle={activeStyle}>채용의뢰</S.NavItem>
+            <S.NavItem to='/recruit' activeStyle={activeStyle}>채용의뢰</S.NavItem>
             {/* <S.NavItem to='/warning' activeStyle={activeStyle}>공지사항</S.NavItem>
             <S.NavItem to='/warning' activeStyle={activeStyle}>면접</S.NavItem>
             <S.NavItem to='/warning' activeStyle={activeStyle}>기업</S.NavItem>

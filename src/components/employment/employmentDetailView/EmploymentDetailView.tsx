@@ -16,7 +16,8 @@ const EmploymentDetailView = ({ history }: any) => {
   useEffect(() => {
     const fetchData = async () => {
       let id = history.location.pathname;
-      id = id.slice(12);
+      id = id.slice(9);
+      
       let token: any = localStorage.getItem("token");
       if(token){
         token = token.replace(/["]+/g, '');
@@ -87,7 +88,7 @@ const EmploymentDetailView = ({ history }: any) => {
             reception={datas.other.reception}
             file={datas.other.file}
           />
-        <S.Back onClick={()=>history.push('/employment')}>뒤로가기</S.Back>
+        <S.Back onClick={()=>history.push('/recruit')}>뒤로가기</S.Back>
         <S.MarginDiv />
       </S.Main>
       }

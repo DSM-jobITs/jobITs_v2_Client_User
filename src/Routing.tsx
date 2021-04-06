@@ -15,8 +15,8 @@ const Routing = () => {
         <Route exact path='/' component={MainContainer} />
         <Route path='/login' component={LoginContainer} />
         <Route path='/password' component={PasswordContainer} />
-        <Route path='/employment/:id' component={EmploymentDetailView}/>
-        <Route path='/employment' component={Employment} />
+        <Route path='/recruit/:id' component={EmploymentDetailView}/>
+        <Route path='/recruit' component={Employment} />
         {/* <Route path='/warning' component={Warning} /> */}
         <Route component={NotFound} />
       </Switch>
