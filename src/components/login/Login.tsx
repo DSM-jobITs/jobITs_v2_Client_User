@@ -14,7 +14,7 @@ const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, p
           <S.Input
             name="id"
             type="id" 
-            placeholder="id"
+            placeholder="email"
             onChange={change}
             value={id}
           />
