@@ -50,6 +50,7 @@ const WorkingConditions = ({salary,allowance,period,meal,welfare}:any) => {
           { meal.lunch ? "중식제공, " : "" }
           { meal.dinner ? "석식제공, " : "" }
           { meal.includeSalary ? "급여 포함" : "" }
+          { meal.breakfast === false && meal.lunch === false && meal.dinner === false && meal.includeSalary === false ? "식비 지원 없음": ""}
         </S.InnerText>
       </S.BoxInner>
       <S.BoxInner>

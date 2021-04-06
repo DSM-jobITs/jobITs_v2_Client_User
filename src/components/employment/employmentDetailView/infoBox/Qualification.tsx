@@ -16,7 +16,7 @@ const Qualification = ({certificate,grade,specialty}: any) => {
     <S.ComplexBox>
       <S.Text>자격 요건</S.Text>
       <S.BoxInner>
-        <S.InnerText fixed>자격증</S.InnerText><S.InnerText>{certificateStr}</S.InnerText>
+        <S.InnerText fixed>자격증</S.InnerText><S.InnerText>{certificateStr?certificateStr:"무관"}</S.InnerText>
       </S.BoxInner>
       <S.BoxInner>
         <S.InnerText fixed>성적</S.InnerText>
@@ -26,7 +26,7 @@ const Qualification = ({certificate,grade,specialty}: any) => {
         }
       </S.BoxInner>
       <S.BoxInner>
-        <S.InnerText fixed>특기사항</S.InnerText><S.InnerText>{specialtyStr}</S.InnerText>
+        <S.InnerText fixed>특기사항</S.InnerText><S.InnerText>{specialtyStr?specialtyStr:"무관"}</S.InnerText>
       </S.BoxInner>
     </S.ComplexBox>
   );

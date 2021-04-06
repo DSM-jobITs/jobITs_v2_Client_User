@@ -100,8 +100,8 @@ export const File = styled.a`
   place-self: center;
   justify-self: start;
   font-size: 0.875rem;
+  margin-right: 20px;
   color: #9B9B9B;
-  margin-left: 95px;
   :hover{
     color: #1234a2;
   }
