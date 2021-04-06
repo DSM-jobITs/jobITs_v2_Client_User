@@ -28,6 +28,7 @@ const EmploymentDetailView = ({ history }: any) => {
       await axios.get(baseURL+'/recruit/detail/'+id,config).then((res)=>{
         setDatas(res.data);
       }).catch((err)=>{
+        alert(err.response.message);
         history.push("/");
       })
     }
@@ -44,7 +45,6 @@ const EmploymentDetailView = ({ history }: any) => {
         <S.CompanyNumber>({datas.entNo})</S.CompanyNumber>
         <hr style={{width:"100%",height:"0.2rem",border:"2px double #D5D5D5",margin:"30px"}}/>
         <S.DeadLine>{datas.deadline} 까지</S.DeadLine>
-
         <S.Introduce>
           <S.Text>기업 소개</S.Text>
           <div style={{lineHeight:"25px"}}>
@@ -57,13 +57,11 @@ const EmploymentDetailView = ({ history }: any) => {
             {datas.workContent}
           </div>
         </S.Introduce>
-          
           <Qualification 
             certificate={datas.qualification.certificate}
             grade={datas.qualification.grade}
             specialty={datas.qualification.specialty}
           />
-
           <WorkingConditions 
             allowance={datas.workingConditions.allowance}
             salary={datas.workingConditions.salary}
@@ -71,17 +69,15 @@ const EmploymentDetailView = ({ history }: any) => {
             meal={datas.workingConditions.meal}
             welfare={datas.workingConditions.welfare}
           />
-
           <EmploymentInfo
-          numOfWorker={datas.entInfo.numOfWorker}
-          entPhone={datas.entInfo.entPhone}
-          entSales={datas.entInfo.entSales}
-          address={datas.entInfo.address}
-          establishmentDate={datas.entInfo.establishmentDate}
-          startTime={datas.entInfo.startTime}
-          endTime={datas.entInfo.endTime}
+            numOfWorker={datas.entInfo.numOfWorker}
+            entPhone={datas.entInfo.entPhone}
+            entSales={datas.entInfo.entSales}
+            address={datas.entInfo.address}
+            establishmentDate={datas.entInfo.establishmentDate}
+            startTime={datas.entInfo.startTime}
+            endTime={datas.entInfo.endTime}
           />
-
           <Etc
             personnel={datas.other.personnel}
             recruitPlan={datas.other.recruitPlan}
