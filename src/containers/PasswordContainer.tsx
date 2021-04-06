@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import axios from 'axios';
 import { baseURL } from '../const';
 import Password from '../components/password/Password';
@@ -21,15 +21,22 @@ const PasswordContainer = ({history}: any) => {
     }
     setInputs(nextInputs);
   }
-  
+
   let token: any = localStorage.getItem("token");
-  token = token.replace(/["]+/g, '');
-  const headers = { 
-    Authorization: "Bearer "+token
+  if(token){
+    token = token.replace(/["]+/g, '');
+    var headers = { 
+      Authorization: "Bearer "+token
+    }
+  } else {
+    alert("로그인 후 이용해 주세요");
+    history.push('/login');
   }
+
 
   const enter = (e: any) => {
     if(e.key == "Enter"){
+      e.preventDefault();
       submit();
     }
   }
