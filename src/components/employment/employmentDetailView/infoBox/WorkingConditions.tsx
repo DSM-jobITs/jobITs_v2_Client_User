@@ -55,9 +55,9 @@ const WorkingConditions = ({salary,allowance,period,meal,welfare}:any) => {
       <S.BoxInner>
         <S.InnerText fixed>복지</S.InnerText>
         <S.InnerText>
-          { welfare.fourMajor ? "4대 보험," : " " }
-          { welfare.selfDevelop ? "자기 개발비," : " " }
-          { welfare.laptop ? "노트북 지급," : " " }
+          { welfare.fourMajor ? "4대 보험, " : " " }
+          { welfare.selfDevelop ? "자기 개발비, " : " " }
+          { welfare.laptop ? "노트북 지급, " : " " }
           { welfare.etc }
         </S.InnerText>
       </S.BoxInner>

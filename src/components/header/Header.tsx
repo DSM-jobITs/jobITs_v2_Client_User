@@ -40,6 +40,7 @@ const Header = ({history}: any) => {
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("refresh");
     setIsLogin(false);
     history.push("/");
   }

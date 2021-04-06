@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import * as S from './style'; 
 
 const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, pushMain}:any) => {
@@ -38,4 +39,4 @@ const Login = React.memo(({inputs, keyPress, submit, change, error, errorText, p
   );
 });
 
-export default Login;
+export default withRouter(Login);
