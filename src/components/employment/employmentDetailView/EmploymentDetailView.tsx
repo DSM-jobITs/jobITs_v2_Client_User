@@ -28,8 +28,8 @@ const EmploymentDetailView = ({ history }: any) => {
       await axios.get(baseURL+'/recruit/detail/'+id,config).then((res)=>{
         setDatas(res.data);
       }).catch((err)=>{
-        alert("로그인 후 이용할 수 있습니다.");
-        history.push("/");
+        alert("요청하신 페이지를 찾을 수 없습니다.");
+        history.back();
       })
     }
     fetchData();
