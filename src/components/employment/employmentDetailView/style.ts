@@ -42,6 +42,14 @@ export const Text = styled.div`
 `
 // -50px -200px
 
+export const Pre = styled.pre`
+  text-decoration: none;
+  line-height: 25px;
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: "InfinitySans-RegularA1";
+`
+
 export const Introduce = styled.div`
   position: relative;
   width: 69rem;
