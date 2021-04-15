@@ -30,7 +30,8 @@ const Login = () => {
   }
 
   const pushMain = () => {
-    history.push('/');
+    window.location.href="/";
+    alert("로그인에 성공하셨습니다.");
   }
 
   const submit = () => {
@@ -69,6 +70,7 @@ const Login = () => {
             type="id" 
             placeholder="email"
             onChange={onChange}
+            onKeyPress={enter}
             value={inputs.id}
           />
         </div>
@@ -86,7 +88,7 @@ const Login = () => {
         <S.ErrorText error={isError}>{errorMsg}</S.ErrorText>
         <S.Submit onClick={submit}>Sign in</S.Submit>
       </S.LoginForm>
-      <S.Button onClick={pushMain}>메인으로</S.Button>
+      <S.Button onClick={()=>history.push("/")}>메인으로</S.Button>
     </S.Main>
   );
 };
