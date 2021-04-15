@@ -42,6 +42,7 @@ const Header = ({history}: any) => {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh");
     setIsLogin(false);
+    alert("로그아웃에 성공하셨습니다.");
     history.push("/");
   }
 
@@ -50,7 +51,7 @@ const Header = ({history}: any) => {
       <S.Main>
         <S.Inner>
           <Link to="/">
-            <S.Logo src={logo} alt="로고"/>
+            <S.Logo src={logo} alt="로고" onClick={()=>window.scrollTo(0,0)}/>
           </Link>
           <S.NavWarp>
             <S.NavItem to='/recruit' activeStyle={activeStyle}>채용의뢰</S.NavItem>
