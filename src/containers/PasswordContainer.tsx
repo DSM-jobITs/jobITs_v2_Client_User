@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react';
+import React,{ useState } from 'react';
 import axios from 'axios';
 import { baseURL } from '../const';
 import Password from '../components/password/Password';
@@ -55,6 +55,7 @@ const PasswordContainer = ({history}: any) => {
       }
       axios.post(baseURL+"/signin/password/",pw,{headers})
       .then((res)=>{
+        alert("성공적으로 비밀번호가 변경되었습니다.");
         history.push("/");
       })
       .catch((err)=>{
