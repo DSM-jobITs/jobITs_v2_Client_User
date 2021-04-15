@@ -14,6 +14,7 @@ const Password = ({inputs, change, keyPress, submit, error, errorText}:any) => {
             name="oldPassword"
             type="password" 
             placeholder="현재 비밀번호"
+            onKeyPress={keyPress}
             onChange={change}
             value={oldPassword}
             autoComplete="on"
@@ -26,6 +27,7 @@ const Password = ({inputs, change, keyPress, submit, error, errorText}:any) => {
             placeholder="비밀번호"
             required
             maxLength={20}
+            onKeyPress={keyPress}
             onChange={change}
             value={checkPassword}
             autoComplete="on"
