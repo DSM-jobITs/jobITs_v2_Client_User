@@ -18,7 +18,7 @@ const EmploymentContainer = ({history}: any) => {
         token = token.replace(/["]+/g, '');
       }
       const config = {
-        headers : { Authorization: "Bearer "+token}
+        headers : { Authorization: "Bearer "+token} 
       }
       await axios.get(baseURL+'/recruit/basic',config).then((res)=>{
         setPosts(res.data.data.list);

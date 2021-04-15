@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import * as P from '../globalPreviewStlye';
-import ItemsWrapper from './ItemsWrapper';
 import axios from 'axios';
 import {baseURL} from '../../../const';
+import ItemsWrapper from './ItemsWrapper';
+
 
 const HomeEmployment = () => {
   const [datas,setDatas] = useState<any>([]);
+
+  const history = useHistory();
 
   useEffect(()=>{
     const fetchData = () => {
