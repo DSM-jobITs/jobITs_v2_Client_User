@@ -29,7 +29,7 @@ const EmploymentDetailView = ({ history }: any) => {
         setDatas(res.data);
       }).catch((err)=>{
         alert("요청하신 페이지를 찾을 수 없습니다.");
-        history.back();
+        history.push("/");
       })
     }
     fetchData();
@@ -47,15 +47,15 @@ const EmploymentDetailView = ({ history }: any) => {
         <S.DeadLine>{datas.deadline} 까지</S.DeadLine>
         <S.Introduce>
           <S.Text>기업 소개</S.Text>
-          <div style={{lineHeight:"25px"}}>
-            {datas.introduction}
-          </div>
+            <S.Pre>
+              {datas.introduction}
+            </S.Pre>
         </S.Introduce>
         <S.Introduce>
           <S.Text>업무 내용</S.Text>
-          <div style={{lineHeight:"25px"}}>
-            {datas.workContent}
-          </div>
+            <S.Pre>
+              {datas.workContent}
+            </S.Pre>
         </S.Introduce>
           <Qualification 
             certificate={datas.qualification.certificate}
