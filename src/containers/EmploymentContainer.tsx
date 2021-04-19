@@ -24,8 +24,8 @@ const EmploymentContainer = ({history}: any) => {
         setPosts(res.data.data.list);
         setLoading(false);
       }).catch((err)=>{
-        alert("로그인 후 이용할 수 있습니다.");
-        history.push("/login");
+        // alert("로그인 후 이용할 수 있습니다.");
+        // history.push("/login");
       })
     }
     fetchData();
